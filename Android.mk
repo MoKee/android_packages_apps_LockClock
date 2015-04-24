@@ -32,6 +32,6 @@ LOCAL_RESOURCE_DIR := $(addprefix $(LOCAL_PATH)/, $(res_dir))
 LOCAL_AAPT_FLAGS := --auto-add-overlay
 LOCAL_AAPT_FLAGS += --extra-packages com.google.android.gms
 
-LOCAL_STATIC_JAVA_LIBRARIES := libGooglePlayServices
+LOCAL_STATIC_JAVA_LIBRARIES := play
 
 include $(BUILD_PACKAGE)
