@@ -180,7 +180,7 @@ public class Preferences {
     }
 
     public static String getWeatherIconSet(Context context) {
-        return getPrefs(context).getString(Constants.WEATHER_ICONS, "color");
+        return getPrefs(context).getString(Constants.WEATHER_ICONS, "mono");
     }
 
     public static boolean useMetricUnits(Context context) {

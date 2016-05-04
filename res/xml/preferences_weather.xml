@@ -64,7 +64,7 @@
             android:title="@string/weather_icon_set_title"
             android:dialogTitle="@string/weather_icon_set_title"
             android:dependency="weather_source"
-            android:defaultValue="color" />
+            android:defaultValue="mono" />
 
         <SwitchPreference
             android:key="weather_show_when_minimized"
