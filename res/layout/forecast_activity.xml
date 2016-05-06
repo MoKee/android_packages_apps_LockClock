@@ -109,8 +109,26 @@
                     android:layout_below="@id/weather_city"
                     android:layout_centerHorizontal="true"
                     android:gravity="center_horizontal"
-                    android:textColor="?android:attr/textColorSecondary"
-                    android:textSize="10sp" />
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/weather_divider_left"
+                    android:layout_below="@id/update_time"
+                    android:layout_width="44dip"
+                    android:layout_height="1dip"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:drawable/divider_horizontal_dark" />
+
+                <TextView
+                    android:id="@+id/weather_aqi"
+                    android:layout_below="@id/weather_divider_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="2dip"
+                    android:textSize="12sp"
+                    android:textColor="?android:attr/textColorPrimary" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -139,7 +157,7 @@
                     android:textColor="?android:attr/textColorPrimary" />
 
                 <ImageView
-                    android:id="@+id/weather_divider"
+                    android:id="@+id/weather_divider_right"
                     android:layout_below="@id/weather_low_high"
                     android:layout_width="44dip"
                     android:layout_height="1dip"
@@ -148,7 +166,7 @@
 
                 <TextView
                     android:id="@+id/weather_hum_wind"
-                    android:layout_below="@id/weather_divider"
+                    android:layout_below="@id/weather_divider_right"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"

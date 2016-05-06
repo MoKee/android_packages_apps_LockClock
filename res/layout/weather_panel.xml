@@ -103,7 +103,7 @@
             android:layout_below="@id/weather_condition"
             android:layout_alignParentRight="true"
             android:textSize="8sp"
-            android:textColor="?android:attr/textColorSecondary"
+            android:textColor="?android:attr/textColorPrimary"
             style="@style/label_shadow" />
 
     </RelativeLayout>

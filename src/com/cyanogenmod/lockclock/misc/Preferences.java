@@ -41,6 +41,7 @@ public class Preferences {
 
     private static final String WEATHER_INFO_CITY = "city";
     private static final String WEATHER_INFO_CONDITION_CODE = "condition_code";
+    private static final String WEATHER_INFO_AQI = "aqi";
     private static final String WEATHER_INFO_TEMPERATURE = "temperature";
     private static final String WEATHER_INFO_TEMPERATURE_UNIT = "temperature_unit";
     private static final String WEATHER_INFO_TIMESTAMP = "timestamp";
@@ -127,7 +128,7 @@ public class Preferences {
 
     public static int weatherTimestampFontColor(Context context) {
         int color = Color.parseColor(getPrefs(context).getString(Constants.WEATHER_TIMESTAMP_FONT_COLOR,
-                Constants.DEFAULT_DARK_COLOR));
+                Constants.DEFAULT_LIGHT_COLOR));
         return color;
     }
 
@@ -303,6 +304,7 @@ public class Preferences {
                 jsonObject
                     .put(WEATHER_INFO_CITY, info.getCity())
                     .put(WEATHER_INFO_CONDITION_CODE, info.getConditionCode())
+                    .put(WEATHER_INFO_AQI, info.getAqi())
                     .put(WEATHER_INFO_TEMPERATURE, info.getTemperature())
                     .put(WEATHER_INFO_TEMPERATURE_UNIT, info.getTemperatureUnit())
                     .put(WEATHER_INFO_TIMESTAMP, info.getTimestamp());
@@ -370,6 +372,7 @@ public class Preferences {
 
         String city;
         int conditionCode;
+        String aqi;
         double temperature;
         int tempUnit;
         double humidity;
@@ -385,6 +388,7 @@ public class Preferences {
             JSONObject cached = new JSONObject(cachedInfo);
             city = cached.getString(WEATHER_INFO_CITY);
             conditionCode = cached.getInt(WEATHER_INFO_CONDITION_CODE);
+            aqi = cached.getString(WEATHER_INFO_AQI);
             temperature = cached.getDouble(WEATHER_INFO_TEMPERATURE);
             tempUnit = cached.getInt(WEATHER_INFO_TEMPERATURE_UNIT);
             humidity = cached.getDouble(WEATHER_INFO_HUMIDITY);
@@ -410,6 +414,7 @@ public class Preferences {
             }
             WeatherInfo.Builder weatherInfo = new WeatherInfo.Builder(city, temperature, tempUnit)
                     .setWeatherCondition(conditionCode)
+                    .setAqi(aqi)
                     .setTimestamp(timestamp);
 
             if (!Double.isNaN(humidity)) weatherInfo.setHumidity(humidity);

@@ -20,6 +20,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.text.format.DateFormat;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -96,8 +97,8 @@ public class ForecastBuilder {
 
         // Set the weather source
         TextView weatherSource = (TextView) view.findViewById(R.id.weather_source);
-        final MKWeatherManager cmWeatherManager = MKWeatherManager.getInstance(context);
-        String activeWeatherLabel = cmWeatherManager.getActiveWeatherServiceProviderLabel();
+        final MKWeatherManager mkWeatherManager = MKWeatherManager.getInstance(context);
+        String activeWeatherLabel = mkWeatherManager.getActiveWeatherServiceProviderLabel();
         weatherSource.setText(activeWeatherLabel != null ? activeWeatherLabel : "");
 
         // Set the current conditions
@@ -110,6 +111,19 @@ public class ForecastBuilder {
         // Weather Condition
         TextView weatherCondition = (TextView) view.findViewById(R.id.weather_condition);
         weatherCondition.setText(Utils.resolveWeatherCondition(context, w.getConditionCode()));
+
+        // Weather Aqi
+        String aqiLabel = w.getAqi();
+        TextView weatherAqi = (TextView) view.findViewById(R.id.weather_aqi);
+        ImageView weatherDivider = (ImageView) view.findViewById(R.id.weather_divider_left);
+        if (TextUtils.isEmpty(aqiLabel)) {
+            weatherAqi.setVisibility(View.GONE);
+            weatherDivider.setVisibility(View.GONE);
+        } else {
+            weatherAqi.setText(aqiLabel);
+            weatherAqi.setVisibility(View.VISIBLE);
+            weatherDivider.setVisibility(View.VISIBLE);
+        }
 
         // Weather Temps
         TextView weatherTemp = (TextView) view.findViewById(R.id.weather_temp);

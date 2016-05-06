@@ -108,7 +108,7 @@
             android:key="weather_timestamp_font_color"
             android:title="@string/font_color_timestamp"
             android:dependency="weather_source"
-            android:defaultValue="#80ffffff"
+            android:defaultValue="#ffffffff"
             android:entries="@array/font_color_entries"
             android:entryValues="@array/font_color_values" />
     </PreferenceCategory>
