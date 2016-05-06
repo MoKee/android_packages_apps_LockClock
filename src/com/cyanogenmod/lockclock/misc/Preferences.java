@@ -43,6 +43,7 @@ public class Preferences {
     private static final String WEATHER_INFO_CITY = "city";
     private static final String WEATHER_INFO_CONDITION_CODE = "condition_code";
     private static final String WEATHER_INFO_AQI = "aqi";
+    private static final String WEATHER_INFO_UV = "uv";
     private static final String WEATHER_INFO_TEMPERATURE = "temperature";
     private static final String WEATHER_INFO_TEMPERATURE_UNIT = "temperature_unit";
     private static final String WEATHER_INFO_TIMESTAMP = "timestamp";
@@ -311,6 +312,10 @@ public class Preferences {
 
                 String aqi = info.getAqi();
                 jsonObject.put(WEATHER_INFO_AQI, TextUtils.isEmpty(aqi) ? "" : aqi);
+
+                String uv = info.getUv();
+                jsonObject.put(WEATHER_INFO_UV, TextUtils.isEmpty(uv) ? "" : uv);
+
                 // Handle special cases. JSONObject.put(key, double) does not allow
                 // Double.NaN, so we store it as a string. JSONObject.getDouble() will parse the
                 // "NaN" string and return Double.NaN, which is what we want
@@ -375,6 +380,7 @@ public class Preferences {
         String city;
         int conditionCode;
         String aqi;
+        String uv;
         double temperature;
         int tempUnit;
         double humidity;
@@ -391,6 +397,7 @@ public class Preferences {
             city = cached.getString(WEATHER_INFO_CITY);
             conditionCode = cached.getInt(WEATHER_INFO_CONDITION_CODE);
             aqi = cached.getString(WEATHER_INFO_AQI);
+            uv = cached.getString(WEATHER_INFO_UV);
             temperature = cached.getDouble(WEATHER_INFO_TEMPERATURE);
             tempUnit = cached.getInt(WEATHER_INFO_TEMPERATURE_UNIT);
             humidity = cached.getDouble(WEATHER_INFO_HUMIDITY);
@@ -419,6 +426,7 @@ public class Preferences {
                     .setTimestamp(timestamp);
 
             if (!TextUtils.isEmpty(aqi)) weatherInfo.setAqi(aqi);
+            if (!TextUtils.isEmpty(uv)) weatherInfo.setUv(uv);
             if (!Double.isNaN(humidity)) weatherInfo.setHumidity(humidity);
             if (!Double.isNaN(windSpeed) && !Double.isNaN(windDirection)) {
                 weatherInfo.setWind(windSpeed, windDirection, windSpeedUnit);

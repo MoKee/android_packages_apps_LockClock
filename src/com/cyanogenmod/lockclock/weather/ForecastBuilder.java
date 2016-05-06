@@ -139,6 +139,11 @@ public class ForecastBuilder {
         TextView city = (TextView) view.findViewById(R.id.weather_city);
         city.setText(w.getCity());
 
+        String uvLabel = w.getUv();
+        TextView weatherUv = (TextView) view.findViewById(R.id.weather_uv);
+        weatherUv.setText(uvLabel);
+        weatherUv.setVisibility(!TextUtils.isEmpty(uvLabel) ? View.VISIBLE : View.GONE);
+
         // Weather Update Time
         Date lastUpdate = new Date(w.getTimestamp());
         StringBuilder sb = new StringBuilder();
@@ -148,7 +153,7 @@ public class ForecastBuilder {
         TextView updateTime = (TextView) view.findViewById(R.id.update_time);
         updateTime.setText(sb.toString());
         updateTime.setVisibility(
-                Preferences.showWeatherTimestamp(context) ? View.VISIBLE : View.GONE);
+                Preferences.showWeatherTimestamp(context) && TextUtils.isEmpty(uvLabel) ? View.VISIBLE : View.GONE);
 
         // Weather Temps Panel additional items
         final String low = WeatherUtils.formatTemperature(todaysLow, tempUnit);

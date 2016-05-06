@@ -102,19 +102,34 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/update_time"
+                <RelativeLayout
+                    android:id="@+id/time_and_uv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/weather_city"
-                    android:layout_centerHorizontal="true"
-                    android:gravity="center_horizontal"
-                    android:textColor="?android:attr/textColorPrimary"
-                    android:textSize="12sp" />
+                    android:layout_centerHorizontal="true" >
+
+                    <TextView
+                        android:id="@+id/update_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textColor="?android:attr/textColorPrimary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/weather_uv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textColor="?android:attr/textColorPrimary"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
 
                 <ImageView
                     android:id="@+id/weather_divider_left"
-                    android:layout_below="@id/update_time"
+                    android:layout_below="@id/time_and_uv"
                     android:layout_width="44dip"
                     android:layout_height="1dip"
                     android:layout_centerHorizontal="true"
