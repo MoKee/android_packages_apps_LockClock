@@ -199,6 +199,10 @@ public class ForecastBuilder {
 
         TimeZone MyTimezone = TimeZone.getDefault();
         Calendar calendar = new GregorianCalendar(MyTimezone);
+        if (forecasts.size() > 1) {
+            forecasts.remove(0);
+            calendar.add(Calendar.DAY_OF_WEEK, 1);
+        }
         int weatherTempUnit = w.getTemperatureUnit();
         // Iterate through the forecasts
         for (DayForecast d : forecasts) {
