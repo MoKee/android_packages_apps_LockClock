@@ -19,6 +19,7 @@ package com.cyanogenmod.lockclock.misc;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.text.TextUtils;
 import mokee.weather.WeatherInfo;
 import mokee.weather.WeatherLocation;
 import org.json.JSONArray;
@@ -304,11 +305,12 @@ public class Preferences {
                 jsonObject
                     .put(WEATHER_INFO_CITY, info.getCity())
                     .put(WEATHER_INFO_CONDITION_CODE, info.getConditionCode())
-                    .put(WEATHER_INFO_AQI, info.getAqi())
                     .put(WEATHER_INFO_TEMPERATURE, info.getTemperature())
                     .put(WEATHER_INFO_TEMPERATURE_UNIT, info.getTemperatureUnit())
                     .put(WEATHER_INFO_TIMESTAMP, info.getTimestamp());
 
+                String aqi = info.getAqi();
+                jsonObject.put(WEATHER_INFO_AQI, TextUtils.isEmpty(aqi) ? "" : aqi);
                 // Handle special cases. JSONObject.put(key, double) does not allow
                 // Double.NaN, so we store it as a string. JSONObject.getDouble() will parse the
                 // "NaN" string and return Double.NaN, which is what we want
@@ -414,9 +416,9 @@ public class Preferences {
             }
             WeatherInfo.Builder weatherInfo = new WeatherInfo.Builder(city, temperature, tempUnit)
                     .setWeatherCondition(conditionCode)
-                    .setAqi(aqi)
                     .setTimestamp(timestamp);
 
+            if (!TextUtils.isEmpty(aqi)) weatherInfo.setAqi(aqi);
             if (!Double.isNaN(humidity)) weatherInfo.setHumidity(humidity);
             if (!Double.isNaN(windSpeed) && !Double.isNaN(windDirection)) {
                 weatherInfo.setWind(windSpeed, windDirection, windSpeedUnit);
