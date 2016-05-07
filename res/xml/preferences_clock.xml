@@ -22,12 +22,6 @@
     <PreferenceCategory android:title="@string/general_category">
 
         <SwitchPreference
-            android:key="clock_digital"
-            android:title="@string/use_digital_clock_title"
-            android:summary="@string/use_digital_clock_summary"
-            android:defaultValue="true" />
-
-        <SwitchPreference
             android:key="clock_show_alarm"
             android:title="@string/show_alarm_title"
             android:defaultValue="true" />
@@ -38,19 +32,16 @@
         <SwitchPreference
             android:key="clock_font"
             android:title="@string/clock_font_title"
-            android:dependency="clock_digital"
             android:defaultValue="false" />
 
         <SwitchPreference
             android:key="clock_font_minutes"
             android:title="@string/clock_font_minutes_title"
-            android:dependency="clock_digital"
             android:defaultValue="false" />
 
         <SwitchPreference
             android:key="clock_am_pm_indicator"
             android:title="@string/clock_am_pm_title"
-            android:dependency="clock_digital"
             android:defaultValue="false" />
 
         <SwitchPreference
@@ -61,7 +52,6 @@
         <ListPreference
             android:key="clock_font_color"
             android:title="@string/font_color"
-            android:dependency="clock_digital"
             android:defaultValue="#ffffffff"
             android:entries="@array/font_color_entries"
             android:entryValues="@array/font_color_values" />
@@ -73,19 +63,5 @@
             android:entries="@array/font_color_entries"
             android:entryValues="@array/font_color_values" />
 
-        <ListPreference
-            android:key="clock_background_color"
-            android:title="@string/background_color"
-            android:summary="%s"
-            android:defaultValue="#ff000000"
-            android:entries="@array/font_color_entries"
-            android:entryValues="@array/font_color_values" />
-
-        <!-- Background transparency selection -->
-        <com.cyanogenmod.lockclock.preference.BackgroundTransparency
-                android:key="clock_background_transparency"
-                android:title="@string/background_transparency"
-                android:dialogTitle="@string/background_transparency"
-                android:persistent="false" />
     </PreferenceCategory>
 </PreferenceScreen>

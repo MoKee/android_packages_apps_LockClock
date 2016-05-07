@@ -66,10 +66,6 @@ public class Preferences {
         return getPrefs(context).getBoolean(Constants.WEATHER_FIRST_UPDATE, true);
     }
 
-    public static boolean showDigitalClock(Context context) {
-        return getPrefs(context).getBoolean(Constants.CLOCK_DIGITAL, true);
-    }
-
     public static boolean showAlarm(Context context) {
         return getPrefs(context).getBoolean(Constants.CLOCK_SHOW_ALARM, true);
     }
@@ -106,20 +102,8 @@ public class Preferences {
 
     public static int clockAlarmFontColor(Context context) {
         int color = Color.parseColor(getPrefs(context).getString(Constants.CLOCK_ALARM_FONT_COLOR,
-                Constants.DEFAULT_DARK_COLOR));
+                Constants.DEFAULT_LIGHT_COLOR));
         return color;
-    }
-
-    public static int clockBackgroundColor(Context context) {
-        int color = Color.parseColor(getPrefs(context).getString(Constants.CLOCK_BACKGROUND_COLOR,
-                Constants.DEFAULT_BACKGROUND_COLOR));
-        return color;
-    }
-
-    public static int clockBackgroundTransparency(Context context) {
-        int trans = getPrefs(context).getInt(Constants.CLOCK_BACKGROUND_TRANSPARENCY,
-                Constants.DEFAULT_BACKGROUND_TRANSPARENCY);
-        return trans;
     }
 
     public static int weatherFontColor(Context context) {
@@ -142,7 +126,7 @@ public class Preferences {
 
     public static int calendarDetailsFontColor(Context context) {
         int color = Color.parseColor(getPrefs(context).getString(Constants.CALENDAR_DETAILS_FONT_COLOR,
-                Constants.DEFAULT_DARK_COLOR));
+                Constants.DEFAULT_LIGHT_COLOR));
         return color;
     }
 
@@ -162,7 +146,7 @@ public class Preferences {
 
     public static int calendarUpcomingEventsDetailsFontColor(Context context) {
         int color = Color.parseColor(getPrefs(context).getString(Constants.CALENDAR_UPCOMING_EVENTS_DETAILS_FONT_COLOR,
-                Constants.DEFAULT_DARK_COLOR));
+                Constants.DEFAULT_LIGHT_COLOR));
         return color;
     }
 

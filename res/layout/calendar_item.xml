@@ -60,7 +60,7 @@
             android:marqueeRepeatLimit="marquee_forever"
             android:scrollHorizontally="true"
             android:fadingEdge="horizontal"
-            android:textColor="?android:attr/textColorSecondary"
+            android:textColor="?android:attr/textColorPrimary"
             style="@style/label_shadow" />
     </RelativeLayout>
 </LinearLayout>

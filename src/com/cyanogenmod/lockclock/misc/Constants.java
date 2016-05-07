@@ -24,15 +24,12 @@ public class Constants {
     public static final String PREF_NAME = "LockClock";
 
     // Widget Settings
-    public static final String CLOCK_DIGITAL = "clock_digital";
     public static final String CLOCK_FONT = "clock_font";
     public static final String CLOCK_FONT_MINUTES = "clock_font_minutes";
     public static final String CLOCK_FONT_DATE = "clock_font_date";
     public static final String CLOCK_SHOW_ALARM = "clock_show_alarm";
     public static final String CLOCK_FONT_COLOR = "clock_font_color";
     public static final String CLOCK_ALARM_FONT_COLOR = "clock_alarm_font_color";
-    public static final String CLOCK_BACKGROUND_COLOR = "clock_background_color";
-    public static final String CLOCK_BACKGROUND_TRANSPARENCY = "clock_background_transparency";
     public static final String CLOCK_AM_PM_INDICATOR = "clock_am_pm_indicator";
 
     public static final String SHOW_WEATHER = "show_weather";

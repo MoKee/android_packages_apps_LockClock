@@ -37,16 +37,6 @@
         android:gravity="center"
         android:text="@string/loading_indicator" />
 
-    <!-- Analog clock -->
-    <AnalogClock
-        android:id="@+id/analog_clock"
-        android:dial="@drawable/appwidget_clock_dial"
-        android:hand_hour="@drawable/appwidget_clock_hour"
-        android:hand_minute="@drawable/appwidget_clock_minute"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
     <!-- Digital clock -->
     <LinearLayout
         android:id="@+id/digital_clock"

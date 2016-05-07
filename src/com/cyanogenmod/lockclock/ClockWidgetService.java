@@ -108,7 +108,6 @@ public class ClockWidgetService extends IntentService {
     private void refreshWidget() {
         // Get things ready
         RemoteViews remoteViews;
-        boolean digitalClock = Preferences.showDigitalClock(this);
         boolean showWeather = Preferences.showWeather(this);
         boolean showWeatherWhenMinimized = Preferences.showWeatherWhenMinimized(this);
 
@@ -129,7 +128,7 @@ public class ClockWidgetService extends IntentService {
 
             // Determine which layout to use
             boolean smallWidget = showWeather && showWeatherWhenMinimized
-                    && WidgetUtils.showSmallWidget(this, id, digitalClock, isKeyguard);
+                    && WidgetUtils.showSmallWidget(this, id, isKeyguard);
             if (smallWidget) {
                 // The small widget is only shown if weather needs to be shown
                 // and there is not enough space for the full weather widget and
@@ -140,14 +139,14 @@ public class ClockWidgetService extends IntentService {
                 remoteViews = new RemoteViews(getPackageName(), R.layout.appwidget);
                 // show calendar if enabled and events available and enough space available
                 showCalendar = Preferences.showCalendar(this) && !mHideCalendar
-                        && WidgetUtils.canFitCalendar(this, id, digitalClock);
+                        && WidgetUtils.canFitCalendar(this, id);
             }
 
             // Hide the Loading indicator
             remoteViews.setViewVisibility(R.id.loading_indicator, View.GONE);
 
             // Always Refresh the Clock widget
-            refreshClock(remoteViews, smallWidget, digitalClock);
+            refreshClock(remoteViews, smallWidget);
             refreshAlarmStatus(remoteViews, smallWidget);
 
             // Refresh the time if using TextView Clock (API 16)
@@ -164,9 +163,9 @@ public class ClockWidgetService extends IntentService {
                     showCalendar ? View.VISIBLE : View.GONE);
 
             boolean canFitWeather = smallWidget
-                    || WidgetUtils.canFitWeather(this, id, digitalClock, isKeyguard);
+                    || WidgetUtils.canFitWeather(this, id, isKeyguard);
             boolean canFitTimestamp = smallWidget
-                    || WidgetUtils.canFitTimestamp(this, id, digitalClock);
+                    || WidgetUtils.canFitTimestamp(this, id);
             // Now, if we need to show the actual weather, do so
             if (showWeather && canFitWeather) {
                 WeatherInfo weatherInfo = Preferences.getCachedWeatherInfo(this);
@@ -182,19 +181,9 @@ public class ClockWidgetService extends IntentService {
             remoteViews.setViewVisibility(R.id.weather_panel,
                     (showWeather && canFitWeather) ? View.VISIBLE : View.GONE);
 
-            // Resize the clock font if needed
-            if (digitalClock) {
-                float ratio = WidgetUtils.getScaleRatio(this, id);
-                setClockSize(remoteViews, ratio);
-            }
-
-            // Set the widget background color/transparency
-            int backColor = Preferences.clockBackgroundColor(this);
-            int backTrans = Preferences.clockBackgroundTransparency(this);
-            backColor = (backTrans << 24) | (backColor & 0xFFFFFF);
-            remoteViews.setInt(R.id.clock_panel, "setBackgroundColor", backColor);
-            remoteViews.setInt(R.id.calendar_panel, "setBackgroundColor", backColor);
-            remoteViews.setInt(R.id.weather_panel, "setBackgroundColor", backColor);
+            // Resize the clock font
+            float ratio = WidgetUtils.getScaleRatio(this, id);
+            setClockSize(remoteViews, ratio);
 
             // Do the update
             mAppWidgetManager.updateAppWidget(id, remoteViews);
@@ -204,17 +193,10 @@ public class ClockWidgetService extends IntentService {
     //===============================================================================================
     // Clock related functionality
     //===============================================================================================
-    private void refreshClock(RemoteViews clockViews, boolean smallWidget, boolean digitalClock) {
-        // Analog or Digital clock
-        if (digitalClock) {
-            // Hours/Minutes is specific to Digital, set it's size
-            refreshClockFont(clockViews, smallWidget);
-            clockViews.setViewVisibility(R.id.digital_clock, View.VISIBLE);
-            clockViews.setViewVisibility(R.id.analog_clock, View.GONE);
-        } else {
-            clockViews.setViewVisibility(R.id.analog_clock, View.VISIBLE);
-            clockViews.setViewVisibility(R.id.digital_clock, View.GONE);
-        }
+    private void refreshClock(RemoteViews clockViews, boolean smallWidget) {
+        // Hours/Minutes is specific to Digital, set it's size
+        refreshClockFont(clockViews, smallWidget);
+        clockViews.setViewVisibility(R.id.digital_clock, View.VISIBLE);
 
         // Date/Alarm is common to both clocks, set it's size
         refreshDateAlarmFont(clockViews, smallWidget);

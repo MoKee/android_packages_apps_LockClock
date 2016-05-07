@@ -43,7 +43,7 @@ public class WidgetUtils {
     /**
      *  Decide whether to show the small Weather panel
      */
-    public static boolean showSmallWidget(Context context, int id, boolean digitalClock, boolean isKeyguard) {
+    public static boolean showSmallWidget(Context context, int id, boolean isKeyguard) {
         Bundle options = AppWidgetManager.getInstance(context).getAppWidgetOptions(id);
         if (options == null) {
             // no data to make the calculation, show the list anyway
@@ -55,20 +55,16 @@ public class WidgetUtils {
                 resources.getDisplayMetrics());
         int neededFullSize = 0;
         if (isKeyguard) {
-            neededFullSize = (int) resources.getDimension(
-                    digitalClock ? R.dimen.min_digital_weather_height_lock
-                                 : R.dimen.min_analog_weather_height_lock);
+            neededFullSize = (int) resources.getDimension(R.dimen.min_digital_weather_height_lock);
         } else {
-            neededFullSize = (int) resources.getDimension(
-                    digitalClock ? R.dimen.min_digital_weather_height
-                                 : R.dimen.min_analog_weather_height);
+            neededFullSize = (int) resources.getDimension(R.dimen.min_digital_weather_height);
         }
         int neededSmallSize = (int) resources.getDimension(R.dimen.min_digital_widget_height);
 
         // Check to see if the widget size is big enough, if it is return true.
         Boolean result = minHeightPx < neededFullSize && minHeightPx > neededSmallSize;
         if (D) {
-            Log.d(TAG, "showSmallWidget: digital clock = " + digitalClock + " with minHeightPx = " + minHeightPx
+            Log.d(TAG, "showSmallWidget: digital clock = " + " with minHeightPx = " + minHeightPx
                     + " and neededFullSize = " + neededFullSize + " and neededSmallSize = " + neededSmallSize);
             Log.d(TAG, "showsmallWidget result = " + result);
         }
@@ -78,7 +74,7 @@ public class WidgetUtils {
     /**
      * Decide whether to show the timestamp
      */
-    public static boolean canFitTimestamp(Context context, int id, boolean digitalClock) {
+    public static boolean canFitTimestamp(Context context, int id) {
         Bundle options = AppWidgetManager.getInstance(context).getAppWidgetOptions(id);
         if (options == null) {
             // no data to make the calculation, show the list anyway
@@ -88,14 +84,12 @@ public class WidgetUtils {
         int minHeight = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT);
         int minHeightPx = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, minHeight,
                 resources.getDisplayMetrics());
-        int neededSize = (int) resources.getDimension(digitalClock
-                ? R.dimen.min_digital_timestamp_height : R.dimen.min_analog_timestamp_height);
+        int neededSize = (int) resources.getDimension(R.dimen.min_digital_timestamp_height);
 
         // Check to see if the widget size is big enough, if it is return true.
         Boolean result = minHeightPx > neededSize;
         if (D) {
-            Log.d(TAG, "canFitTimestamp: digital clock = " + digitalClock
-                    + " with minHeightPx = " + minHeightPx + "  and neededSize = " + neededSize);
+            Log.d(TAG, "canFitTimestamp: digital clock = " + " with minHeightPx = " + minHeightPx + "  and neededSize = " + neededSize);
             Log.d(TAG, "canFitTimestamp result = " + result);
         }
         return result;
@@ -104,7 +98,7 @@ public class WidgetUtils {
     /**
      *  Decide whether to show the full Weather panel
      */
-    public static boolean canFitWeather(Context context, int id, boolean digitalClock, boolean isKeyguard) {
+    public static boolean canFitWeather(Context context, int id, boolean isKeyguard) {
         Bundle options = AppWidgetManager.getInstance(context).getAppWidgetOptions(id);
         if (options == null) {
             // no data to make the calculation, show the list anyway
@@ -116,19 +110,15 @@ public class WidgetUtils {
                 resources.getDisplayMetrics());
         int neededSize = 0;
         if (isKeyguard) {
-            neededSize = (int) resources.getDimension(
-                    digitalClock ? R.dimen.min_digital_weather_height_lock
-                                 : R.dimen.min_analog_weather_height_lock);
+            neededSize = (int) resources.getDimension(R.dimen.min_digital_weather_height_lock);
         } else {
-            neededSize = (int) resources.getDimension(
-                    digitalClock ? R.dimen.min_digital_weather_height
-                                 : R.dimen.min_analog_weather_height);
+            neededSize = (int) resources.getDimension(R.dimen.min_digital_weather_height);
         }
 
         // Check to see if the widget size is big enough, if it is return true.
         Boolean result = minHeightPx > neededSize;
         if (D) {
-            Log.d(TAG, "canFitWeather: digital clock = " + digitalClock + " with minHeightPx = "
+            Log.d(TAG, "canFitWeather: digital clock = " + " with minHeightPx = "
                     + minHeightPx + "  and neededSize = " + neededSize);
             Log.d(TAG, "canFitWeather result = " + result);
         }
@@ -138,7 +128,7 @@ public class WidgetUtils {
     /**
      *  Decide whether to show the Calendar panel
      */
-    public static boolean canFitCalendar(Context context, int id, boolean digitalClock) {
+    public static boolean canFitCalendar(Context context, int id) {
         Bundle options = AppWidgetManager.getInstance(context).getAppWidgetOptions(id);
         if (options == null) {
             // no data to make the calculation, show the list anyway
@@ -148,13 +138,12 @@ public class WidgetUtils {
         int minHeight = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT);
         int minHeightPx = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, minHeight,
                 resources.getDisplayMetrics());
-        int neededSize = (int) resources.getDimension(
-                digitalClock ? R.dimen.min_digital_calendar_height : R.dimen.min_analog_calendar_height);
+        int neededSize = (int) resources.getDimension(R.dimen.min_digital_calendar_height);
 
         // Check to see if the widget size is big enough, if it is return true.
         Boolean result = minHeightPx > neededSize;
         if (D) {
-            if (D) Log.d(TAG, "canFitCalendar: digital clock = " + digitalClock + " with minHeightPx = "
+            if (D) Log.d(TAG, "canFitCalendar: digital clock = " + " with minHeightPx = "
                     + minHeightPx + "  and neededSize = " + neededSize);
             Log.d(TAG, "canFitCalendar result = " + result);
         }

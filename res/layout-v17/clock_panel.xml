@@ -37,16 +37,6 @@
         android:gravity="center"
         android:text="@string/loading_indicator" />
 
-    <!-- Analog clock -->
-    <AnalogClock
-        android:id="@+id/analog_clock"
-        android:dial="@drawable/appwidget_clock_dial"
-        android:hand_hour="@drawable/appwidget_clock_hour"
-        android:hand_minute="@drawable/appwidget_clock_minute"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-
     <!-- Digital clock -->
     <LinearLayout
         android:id="@+id/digital_clock"
@@ -149,7 +139,7 @@
         <TextView android:id="@+id/nextAlarm_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/clock_gray"
+            android:textColor="@color/clock_white"
             style="@style/alarm_label_bold"
             android:layout_marginLeft="2dip"
             android:gravity="center"
@@ -157,7 +147,7 @@
         <TextView android:id="@+id/nextAlarm_regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/clock_gray"
+            android:textColor="@color/clock_white"
             style="@style/alarm_label_thin"
             android:layout_marginLeft="4dip"
             android:gravity="center"
