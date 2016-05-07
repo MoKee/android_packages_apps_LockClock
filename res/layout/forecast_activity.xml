@@ -27,14 +27,12 @@
     <LinearLayout
         android:layout_width="@dimen/forecast_dialog_width"
         android:layout_height="wrap_content"
-        android:background="@drawable/dialog_full_holo_dark"
         android:gravity="center_vertical"
         android:orientation="vertical" >
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:weightSum="1"
             android:gravity="center_horizontal">
 
             <TextView
@@ -45,15 +43,6 @@
                 android:singleLine="true"
                 android:ellipsize="end"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <ImageView
-                android:id="@+id/weather_refresh"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="8dp"
-                android:src="@drawable/ic_menu_refresh"
-                android:layout_gravity="right"
-                android:background="?android:attr/selectableItemBackground" />
         </FrameLayout>
 
         <ImageView
@@ -74,25 +63,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:padding="4dip"
                 android:gravity="center"
                 android:src="@android:drawable/ic_dialog_alert" />
 
             <RelativeLayout
-                android:layout_width="wrap_content"
+                android:id="@+id/weather_info_left"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
                 android:layout_toLeftOf="@id/weather_image"
                 android:orientation="horizontal"
                 android:padding="4dip" >
 
                 <TextView
                     android:id="@+id/weather_city"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:ellipsize="marquee"
-                    android:gravity="center_horizontal"
                     android:maxLines="2"
                     android:textColor="?android:attr/textColorPrimary"
                     android:textSize="14sp"
@@ -102,22 +92,21 @@
                     android:id="@+id/time_and_uv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
                     android:layout_below="@id/weather_city"
-                    android:layout_centerHorizontal="true" >
+                    android:paddingBottom="2dip" >
 
                     <TextView
                         android:id="@+id/update_time"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/weather_uv"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="12sp" />
 
@@ -143,33 +132,46 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/weather_temps_panel"
+                android:id="@+id/weather_info_right"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
+                android:gravity="center_horizontal"
                 android:layout_toRightOf="@id/weather_image"
-                android:orientation="horizontal" >
+                android:layout_alignBaseline="@id/weather_info_left"
+                android:orientation="horizontal"
+                android:padding="4dip" >
 
                 <TextView
                     android:id="@+id/weather_temp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/weather_low_high_hum"
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:id="@+id/weather_low_high_and_hum"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
                     android:layout_below="@id/weather_temp"
-                    android:layout_centerHorizontal="true"
-                    android:paddingBottom="2dip"
-                    android:textSize="12sp"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    android:paddingBottom="2dip" >
+
+                    <TextView
+                        android:id="@+id/weather_low_high_hum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="?android:attr/textColorPrimary" />
+
+                </RelativeLayout>
 
                 <ImageView
                     android:id="@+id/weather_divider_right"
-                    android:layout_below="@id/weather_low_high_hum"
+                    android:layout_below="@id/weather_low_high_and_hum"
                     android:layout_width="44dip"
                     android:layout_height="1dip"
                     android:layout_centerHorizontal="true"
@@ -223,34 +225,5 @@
             android:padding="8dp"
             android:visibility="gone" />
 
-        <LinearLayout android:id="@+id/buttonPanel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:orientation="vertical"
-            android:divider="?android:attr/dividerHorizontal"
-            android:showDividers="beginning"
-            android:dividerPadding="0dip">
-
-            <LinearLayout
-                style="?android:attr/buttonBarStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layoutDirection="locale"
-                android:measureWithLargestChild="true">
-
-                <Button android:id="@+id/button"
-                    android:layout_width="0dip"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:maxLines="2"
-                    android:text="@string/menu_done"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:textSize="14sp"
-                    android:minHeight="48dp"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -37,16 +37,12 @@ import com.cyanogenmod.lockclock.misc.Preferences;
 import com.cyanogenmod.lockclock.misc.WidgetUtils;
 import mokee.weather.WeatherInfo;
 
-public class ForecastActivity extends Activity implements OnClickListener {
+public class ForecastActivity extends Activity {
     private static final String TAG = "ForecastActivity";
 
     private BroadcastReceiver mUpdateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            // Stop the animation
-            ImageView view = (ImageView) findViewById(R.id.weather_refresh);
-            view.setAnimation(null);
-
             if (!intent.getBooleanExtra(WeatherUpdateService.EXTRA_UPDATE_CANCELLED, false)) {
                 updateForecastPanel();
             }
@@ -69,6 +65,7 @@ public class ForecastActivity extends Activity implements OnClickListener {
 
         registerReceiver(mUpdateReceiver, new IntentFilter(WeatherUpdateService.ACTION_UPDATE_FINISHED));
         updateForecastPanel();
+        forceUpdate();
     }
 
     @Override
@@ -95,32 +92,12 @@ public class ForecastActivity extends Activity implements OnClickListener {
         View fullLayout = ForecastBuilder.buildFullPanel(this, R.layout.forecast_activity, weather);
         setContentView(fullLayout);
         fullLayout.requestFitSystemWindows();
-
-        // Register an onClickListener on Weather refresh
-        findViewById(R.id.weather_refresh).setOnClickListener(this);
-
-        // Register an onClickListener on the fake done button
-        findViewById(R.id.button).setOnClickListener(this);
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v.getId() != R.id.button) {
-            // Setup anim with desired properties and start the animation
-            ImageView view = (ImageView) findViewById(R.id.weather_refresh);
-            RotateAnimation anim = new RotateAnimation(0.0f, 360.0f,
-                    Animation.RELATIVE_TO_SELF, 0.5f,
-                    Animation.RELATIVE_TO_SELF, 0.5f);
-            anim.setInterpolator(new LinearInterpolator());
-            anim.setRepeatCount(Animation.INFINITE);
-            anim.setDuration(700);
-            view.startAnimation(anim); 
-
-            Intent i = new Intent(this, WeatherUpdateService.class);
-            i.setAction(WeatherUpdateService.ACTION_FORCE_UPDATE);
-            startService(i);
-        } else {
-            finish();
-        }
+    private void forceUpdate() {
+        Intent i = new Intent(this, WeatherUpdateService.class);
+        i.setAction(WeatherUpdateService.ACTION_FORCE_UPDATE);
+        startService(i);
     }
+
 }

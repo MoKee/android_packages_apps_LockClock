@@ -67,7 +67,7 @@
         <activity android:name=".weather.ForecastActivity"
             android:hardwareAccelerated="true"
             android:noHistory="true"
-            android:theme="@style/transparent"
+            android:theme="@style/Theme.ForecastDialog"
             android:launchMode="singleInstance"
             android:taskAffinity=""
             android:excludeFromRecents="true" />

@@ -84,6 +84,13 @@
         <item name="android:windowAnimationStyle">@null</item>
     </style>
 
+    <style name="Theme.ForecastDialog" parent="android:Theme.Material.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_full_holo_dark</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
     <style name="Theme.Main" parent="@android:style/Theme.Material.Light.DarkActionBar">
         <!-- Main theme colors -->
         <item name="android:colorPrimary">@color/colorPrimary</item>
