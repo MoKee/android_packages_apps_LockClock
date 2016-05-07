@@ -129,10 +129,9 @@ public class ForecastBuilder {
         TextView weatherTemp = (TextView) view.findViewById(R.id.weather_temp);
         weatherTemp.setText(WeatherUtils.formatTemperature(temp, tempUnit));
 
-        // Humidity and Wind
-        TextView weatherHumWind = (TextView) view.findViewById(R.id.weather_hum_wind);
-        weatherHumWind.setText(Utils.formatHumidity(w.getHumidity()) + ", "
-                + Utils.formatWindSpeed(context, windSpeed, windSpeedUnit) + " "
+        // Wind
+        TextView weatherWind = (TextView) view.findViewById(R.id.weather_wind);
+        weatherWind.setText(Utils.formatWindSpeed(context, windSpeed, windSpeedUnit) + " "
                 + Utils.resolveWindDirection(context, w.getWindDirection()));
 
         // City
@@ -155,11 +154,15 @@ public class ForecastBuilder {
         updateTime.setVisibility(
                 Preferences.showWeatherTimestamp(context) && TextUtils.isEmpty(uvLabel) ? View.VISIBLE : View.GONE);
 
-        // Weather Temps Panel additional items
+        // Weather Humidity and Temps Panel additional items
         final String low = WeatherUtils.formatTemperature(todaysLow, tempUnit);
         final String high = WeatherUtils.formatTemperature(todaysHigh, tempUnit);
-        TextView weatherLowHigh = (TextView) view.findViewById(R.id.weather_low_high);
+        TextView weatherLowHigh = (TextView) view.findViewById(R.id.weather_low_high_hum);
         weatherLowHigh.setText(invertLowHigh ? high + " | " + low : low + " | " + high);
+
+        if (!Double.isNaN(w.getHumidity())) {
+            weatherLowHigh.setText(weatherLowHigh.getText() + " | " + Utils.formatHumidity(w.getHumidity()));
+        }
 
         // Get things ready
         LinearLayout forecastView = (LinearLayout) view.findViewById(R.id.forecast_view);
