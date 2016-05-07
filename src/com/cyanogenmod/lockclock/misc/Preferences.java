@@ -87,7 +87,7 @@ public class Preferences {
     }
 
     public static boolean useBoldFontForDateAndAlarms(Context context) {
-        return getPrefs(context).getBoolean(Constants.CLOCK_FONT_DATE, true);
+        return getPrefs(context).getBoolean(Constants.CLOCK_FONT_DATE, false);
     }
 
     public static boolean showAmPmIndicator(Context context) {

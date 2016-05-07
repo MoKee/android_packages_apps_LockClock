@@ -90,7 +90,7 @@
             android:layout_gravity="center_horizontal|top" />
 
         <!-- AM/PM -->
-         <TextView
+        <TextView
             android:id="@+id/clock_ampm"
             style="@style/label_thin"
             android:layout_width="wrap_content"
@@ -99,58 +99,72 @@
             android:layout_marginBottom="15dp"
             android:textColor="@color/clock_white"
             android:visibility="gone" />
-        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/date_alarm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:visibility="gone" >
+        android:visibility="gone"
+        android:orientation="vertical" >
 
-        <!-- Date -->
-        <TextClock android:id="@+id/date_bold"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/clock_white"
-            android:format12Hour="@string/abbrev_wday_month_day_no_year"
-            android:format24Hour="@string/abbrev_wday_month_day_no_year"
-            style="@style/label_bold"
-            android:gravity="center" />
-        <TextClock android:id="@+id/date_regular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/clock_white"
-            android:format12Hour="@string/abbrev_wday_month_day_no_year"
-            android:format24Hour="@string/abbrev_wday_month_day_no_year"
-            style="@style/label_thin"
-            android:visibility="gone"
-            android:gravity="center" />
-
-        <!-- Alarm -->
-        <ImageView android:id="@+id/alarm_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawablePadding="2dip"
-            android:drawableLeft="@drawable/ic_alarm_small"
-            android:layout_marginLeft="8dip"
-            android:gravity="center"
-            android:visibility="gone" />
-        <TextView android:id="@+id/nextAlarm_bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/clock_white"
-            style="@style/alarm_label_bold"
-            android:layout_marginLeft="2dip"
-            android:gravity="center"
-            android:visibility="gone" />
-        <TextView android:id="@+id/nextAlarm_regular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/clock_white"
-            style="@style/alarm_label_thin"
-            android:layout_marginLeft="4dip"
-            android:gravity="center"
-            android:visibility="gone" />
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+            <!-- Date -->
+            <TextClock android:id="@+id/date_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/clock_white"
+                android:format12Hour="@string/abbrev_wday_month_day_no_year"
+                android:format24Hour="@string/abbrev_wday_month_day_no_year"
+                style="@style/label_bold"
+                android:gravity="center" />
+            <TextClock android:id="@+id/date_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/clock_white"
+                android:format12Hour="@string/abbrev_wday_month_day_no_year"
+                android:format24Hour="@string/abbrev_wday_month_day_no_year"
+                style="@style/label_thin"
+                android:visibility="gone"
+                android:gravity="center" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+            <!-- Alarm -->
+            <ImageView android:id="@+id/alarm_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="2dip"
+                android:drawableLeft="@drawable/ic_alarm_small"
+                android:gravity="center"
+                android:visibility="gone" />
+            <TextView android:id="@+id/nextAlarm_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/clock_white"
+                style="@style/alarm_label_bold"
+                android:layout_marginLeft="2dip"
+                android:gravity="center"
+                android:visibility="gone" />
+            <TextView android:id="@+id/nextAlarm_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/clock_white"
+                style="@style/alarm_label_thin"
+                android:layout_marginLeft="4dip"
+                android:gravity="center"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </LinearLayout>

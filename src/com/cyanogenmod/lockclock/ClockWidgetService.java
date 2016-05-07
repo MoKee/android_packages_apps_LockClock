@@ -164,8 +164,6 @@ public class ClockWidgetService extends IntentService {
 
             boolean canFitWeather = smallWidget
                     || WidgetUtils.canFitWeather(this, id, isKeyguard);
-            boolean canFitTimestamp = smallWidget
-                    || WidgetUtils.canFitTimestamp(this, id);
             // Now, if we need to show the actual weather, do so
             if (showWeather && canFitWeather) {
                 WeatherInfo weatherInfo = Preferences.getCachedWeatherInfo(this);
@@ -176,14 +174,12 @@ public class ClockWidgetService extends IntentService {
                     setNoWeatherData(remoteViews, smallWidget);
                 }
             }
-            remoteViews.setViewVisibility(R.id.update_time,
-                    (showWeather && canFitWeather && canFitTimestamp) ? View.VISIBLE : View.GONE);
             remoteViews.setViewVisibility(R.id.weather_panel,
                     (showWeather && canFitWeather) ? View.VISIBLE : View.GONE);
 
             // Resize the clock font
             float ratio = WidgetUtils.getScaleRatio(this, id);
-            setClockSize(remoteViews, ratio);
+            setClockSize(remoteViews, (showWeather && canFitWeather) ? ratio / 2 : ratio);
 
             // Do the update
             mAppWidgetManager.updateAppWidget(id, remoteViews);
@@ -406,18 +402,6 @@ public class ClockWidgetService extends IntentService {
         weatherViews.setViewVisibility(R.id.weather_no_data, View.GONE);
         weatherViews.setViewVisibility(R.id.weather_refresh, View.GONE);
 
-        // Weather Image
-        int resId = IconUtils.getWeatherIconResource(mContext, iconsSet, w.getConditionCode());
-        weatherViews.setViewVisibility(R.id.weather_image, View.VISIBLE);
-        if (resId != 0) {
-            weatherViews.setImageViewResource(R.id.weather_image,
-                    IconUtils.getWeatherIconResource(mContext, iconsSet, w.getConditionCode()));
-        } else {
-            weatherViews.setImageViewBitmap(R.id.weather_image,
-                    IconUtils.getWeatherIconBitmap(mContext, iconsSet, color,
-                            w.getConditionCode()));
-        }
-
         // Weather Condition
         weatherViews.setTextViewText(R.id.weather_condition,
                 Utils.resolveWeatherCondition(mContext, w.getConditionCode()));
@@ -440,42 +424,43 @@ public class ClockWidgetService extends IntentService {
             todaysHigh = WeatherUtils.celsiusToFahrenheit(todaysHigh);
             tempUnit = FAHRENHEIT;
         }
-        weatherViews.setTextViewText(R.id.weather_temp,
-                WeatherUtils.formatTemperature(temp, tempUnit));
-        weatherViews.setViewVisibility(R.id.weather_temps_panel, View.VISIBLE);
-        weatherViews.setTextColor(R.id.weather_temp, color);
+
+        // Weather Temps Panel additional items
+        boolean invertLowhigh = Preferences.invertLowHighTemperature(this);
+        final String low = WeatherUtils.formatTemperature(todaysLow, tempUnit);
+        final String high = WeatherUtils.formatTemperature(todaysHigh, tempUnit);
+
+        weatherViews.setTextViewText(R.id.weather_temp_and_low_high,(invertLowhigh ? WidgetUtils.formatTemperatureUnit(high, tempUnit) + "/" + low
+                        : WidgetUtils.formatTemperatureUnit(low, tempUnit) + "/" + high) +  " | " + WeatherUtils.formatTemperature(temp, tempUnit));
+        weatherViews.setTextColor(R.id.weather_temp_and_low_high, color);
+
+        String uv = w.getUv();
+        weatherViews.setTextViewText(R.id.weather_uv, uv);
+
+        String aqi = w.getAqi();
+        weatherViews.setTextViewText(R.id.weather_aqi, aqi);
+
+        if (!TextUtils.isEmpty(uv) && !TextUtils.isEmpty(aqi) || !TextUtils.isEmpty(aqi)) {
+            weatherViews.setViewVisibility(R.id.weather_uv, View.GONE);
+            weatherViews.setViewVisibility(R.id.weather_aqi, View.VISIBLE);
+        } else if (!TextUtils.isEmpty(uv)) {
+            weatherViews.setViewVisibility(R.id.weather_uv, View.VISIBLE);
+            weatherViews.setViewVisibility(R.id.weather_aqi, View.GONE);
+        } else {
+            weatherViews.setViewVisibility(R.id.weather_uv, View.GONE);
+            weatherViews.setViewVisibility(R.id.weather_aqi, View.GONE);
+        }
 
         if (!smallWidget) {
             // Display the full weather information panel items
             // Load the preferences
             boolean showLocation = Preferences.showWeatherLocation(this);
-            boolean showTimestamp = Preferences.showWeatherTimestamp(this);
 
             // City
             weatherViews.setTextViewText(R.id.weather_city, w.getCity());
             weatherViews.setViewVisibility(R.id.weather_city, showLocation ? View.VISIBLE : View.GONE);
             weatherViews.setTextColor(R.id.weather_city, color);
 
-            // Weather Update Time
-            if (showTimestamp) {
-                Date updateTime = new Date(w.getTimestamp());
-                StringBuilder sb = new StringBuilder();
-                sb.append(DateFormat.format("E", updateTime));
-                sb.append(" ");
-                sb.append(DateFormat.getTimeFormat(this).format(updateTime));
-                weatherViews.setTextViewText(R.id.update_time, sb.toString());
-                weatherViews.setViewVisibility(R.id.update_time, View.VISIBLE);
-                weatherViews.setTextColor(R.id.update_time, timestampColor);
-            } else {
-                weatherViews.setViewVisibility(R.id.update_time, View.GONE);
-            }
-
-            // Weather Temps Panel additional items
-            boolean invertLowhigh = Preferences.invertLowHighTemperature(this);
-            final String low = WeatherUtils.formatTemperature(todaysLow, tempUnit);
-            final String high = WeatherUtils.formatTemperature(todaysHigh, tempUnit);
-            weatherViews.setTextViewText(R.id.weather_low_high, invertLowhigh ? high + " | " + low : low + " | " + high);
-            weatherViews.setTextColor(R.id.weather_low_high, color);
         }
 
         // Register an onClickListener on Weather
@@ -498,11 +483,8 @@ public class ClockWidgetService extends IntentService {
         } else {
             noData = getString(R.string.weather_source_not_selected);
         }
-        weatherViews.setViewVisibility(R.id.weather_image, View.INVISIBLE);
         if (!smallWidget) {
             weatherViews.setViewVisibility(R.id.weather_city, View.GONE);
-            weatherViews.setViewVisibility(R.id.update_time, View.GONE);
-            weatherViews.setViewVisibility(R.id.weather_temps_panel, View.GONE);
             weatherViews.setViewVisibility(R.id.weather_condition, View.GONE);
 
             // Set up the no data and refresh indicators
@@ -521,9 +503,9 @@ public class ClockWidgetService extends IntentService {
             weatherViews.setViewVisibility(R.id.weather_no_data, firstRun ? View.GONE : View.VISIBLE);
             weatherViews.setViewVisibility(R.id.weather_refresh,  firstRun ? View.GONE : View.VISIBLE);
         } else {
-            weatherViews.setTextViewText(R.id.weather_temp, firstRun ? null : noData);
+            weatherViews.setTextViewText(R.id.weather_temp_and_low_high, firstRun ? null : noData);
             weatherViews.setTextViewText(R.id.weather_condition, firstRun ? null : getString(R.string.weather_tap_to_refresh));
-            weatherViews.setTextColor(R.id.weather_temp, color);
+            weatherViews.setTextColor(R.id.weather_temp_and_low_high, color);
             weatherViews.setTextColor(R.id.weather_condition, color);
         }
 

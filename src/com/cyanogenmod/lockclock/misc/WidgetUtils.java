@@ -32,6 +32,8 @@ import android.util.TypedValue;
 
 import com.cyanogenmod.lockclock.R;
 
+import mokee.providers.WeatherContract;
+
 public class WidgetUtils {
     //===============================================================================================
     // Widget display and resizing related functionality
@@ -72,30 +74,6 @@ public class WidgetUtils {
     }
 
     /**
-     * Decide whether to show the timestamp
-     */
-    public static boolean canFitTimestamp(Context context, int id) {
-        Bundle options = AppWidgetManager.getInstance(context).getAppWidgetOptions(id);
-        if (options == null) {
-            // no data to make the calculation, show the list anyway
-            return true;
-        }
-        Resources resources = context.getResources();
-        int minHeight = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT);
-        int minHeightPx = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, minHeight,
-                resources.getDisplayMetrics());
-        int neededSize = (int) resources.getDimension(R.dimen.min_digital_timestamp_height);
-
-        // Check to see if the widget size is big enough, if it is return true.
-        Boolean result = minHeightPx > neededSize;
-        if (D) {
-            Log.d(TAG, "canFitTimestamp: digital clock = " + " with minHeightPx = " + minHeightPx + "  and neededSize = " + neededSize);
-            Log.d(TAG, "canFitTimestamp result = " + result);
-        }
-        return result;
-    }
-
-    /**
      *  Decide whether to show the full Weather panel
      */
     public static boolean canFitWeather(Context context, int id, boolean isKeyguard) {
@@ -105,24 +83,31 @@ public class WidgetUtils {
             return true;
         }
         Resources resources = context.getResources();
-        int minHeight = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT);
-        int minHeightPx = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, minHeight,
-                resources.getDisplayMetrics());
-        int neededSize = 0;
         if (isKeyguard) {
+            int minHeight = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT);
+            int minHeightPx = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, minHeight,
+                    resources.getDisplayMetrics());
+            int neededSize = 0;
             neededSize = (int) resources.getDimension(R.dimen.min_digital_weather_height_lock);
-        } else {
-            neededSize = (int) resources.getDimension(R.dimen.min_digital_weather_height);
-        }
 
-        // Check to see if the widget size is big enough, if it is return true.
-        Boolean result = minHeightPx > neededSize;
-        if (D) {
-            Log.d(TAG, "canFitWeather: digital clock = " + " with minHeightPx = "
-                    + minHeightPx + "  and neededSize = " + neededSize);
-            Log.d(TAG, "canFitWeather result = " + result);
+            // Check to see if the widget size is big enough, if it is return true.
+            Boolean result = minHeightPx > neededSize;
+            if (D) {
+                Log.d(TAG, "canFitWeather: digital clock = " + " with minHeightPx = "
+                        + minHeightPx + "  and neededSize = " + neededSize);
+                Log.d(TAG, "canFitWeather result = " + result);
+            }
+            return result;
+        } else {
+            int minWidth = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH);
+            int minWidthPx = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, minWidth,
+                    resources.getDisplayMetrics());
+            int neededSize = 0;
+            neededSize = (int) resources.getDimension(R.dimen.min_digital_weather_width);
+            Boolean result = minWidthPx > neededSize;
+            Log.d(TAG, "canFitWeather minWidthPx = " + minWidthPx + "neededSize = " + neededSize);
+            return result;
         }
-        return result;
     }
 
     /**
@@ -217,6 +202,10 @@ public class WidgetUtils {
      */
     public static boolean isTranslucencyAvailable() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
+    }
+
+    public static String formatTemperatureUnit(String tempValue, int tempUnit) {
+        return tempValue.replace(tempUnit == WeatherContract.WeatherColumns.TempUnit.CELSIUS ? "C" : "F", "");
     }
 
     /**

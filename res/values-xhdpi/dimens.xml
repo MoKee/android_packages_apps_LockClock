@@ -28,7 +28,7 @@
     <dimen name="min_digital_weather_height_lock">160dip</dimen>
     <dimen name="min_analog_weather_height_lock">160dip</dimen>
 
-    <dimen name="min_digital_calendar_height">200dip</dimen>
-    <dimen name="min_analog_calendar_height">200dip</dimen>
+    <dimen name="min_digital_calendar_height">142dip</dimen>
+    <dimen name="min_analog_calendar_height">142dip</dimen>
 
 </resources>

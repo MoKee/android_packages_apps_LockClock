@@ -30,6 +30,8 @@ import android.widget.TextView;
 import com.cyanogenmod.lockclock.R;
 import com.cyanogenmod.lockclock.misc.IconUtils;
 import com.cyanogenmod.lockclock.misc.Preferences;
+import com.cyanogenmod.lockclock.misc.WidgetUtils;
+
 import static mokee.providers.WeatherContract.WeatherColumns.WindSpeedUnit.MPH;
 import static mokee.providers.WeatherContract.WeatherColumns.WindSpeedUnit.KPH;
 import static mokee.providers.WeatherContract.WeatherColumns.TempUnit.FAHRENHEIT;
@@ -157,11 +159,12 @@ public class ForecastBuilder {
                 Preferences.showWeatherTimestamp(context) && TextUtils.isEmpty(uvLabel) ? View.VISIBLE : View.GONE);
 
         // Weather Humidity and Temps Panel additional items
-        final String low = WeatherUtils.formatTemperature(todaysLow, tempUnit).replace(
-                tempUnit == WeatherContract.WeatherColumns.TempUnit.CELSIUS ? "C" : "F", "");
+        final String low = WeatherUtils.formatTemperature(todaysLow, tempUnit);
+
         final String high = WeatherUtils.formatTemperature(todaysHigh, tempUnit);
         TextView weatherLowHigh = (TextView) view.findViewById(R.id.weather_low_high_hum);
-        weatherLowHigh.setText(invertLowHigh ? high + "/" + low : low + "/" + high);
+        weatherLowHigh.setText(invertLowHigh ? WidgetUtils.formatTemperatureUnit(high, tempUnit) + "/" + low
+                : WidgetUtils.formatTemperatureUnit(low, tempUnit) + "/" + high);
 
         if (!Double.isNaN(w.getHumidity())) {
             weatherLowHigh.setText(weatherLowHigh.getText() + " | " + Utils.formatHumidity(w.getHumidity()));
@@ -251,11 +254,10 @@ public class ForecastBuilder {
                 highTemp = WeatherUtils.celsiusToFahrenheit(highTemp);
                 tempUnit = FAHRENHEIT;
             }
-            String dayLow = WeatherUtils.formatTemperature(lowTemp, tempUnit).replace(
-                    tempUnit == WeatherContract.WeatherColumns.TempUnit.CELSIUS ? "C" : "F", "");
+            String dayLow = WeatherUtils.formatTemperature(lowTemp, tempUnit);
             String dayHigh = WeatherUtils.formatTemperature(highTemp, tempUnit);
             TextView temps = (TextView) forecastItem.findViewById(R.id.weather_temps);
-            temps.setText(invertLowHigh ? dayHigh + "/" + dayLow : dayLow + "/" + dayHigh);
+            temps.setText(invertLowHigh ? WidgetUtils.formatTemperatureUnit(dayHigh, tempUnit) + "/" + dayLow : WidgetUtils.formatTemperatureUnit(dayLow, tempUnit) + "/" + dayHigh);
 
             // Add the view
             smallPanel.addView(forecastItem,

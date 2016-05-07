@@ -20,26 +20,36 @@
     android:layout_gravity="center_horizontal|top"
     android:orientation="vertical">
 
-    <include layout="@layout/clock_panel"
-        android:id="@+id/clock_panel"
+    <LinearLayout
+        android:id="@+id/main_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|top" />
+        android:orientation="horizontal">
 
-    <include layout="@layout/weather_panel"
-        android:id="@+id/weather_panel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|top"
-        android:layout_below="@id/clock_panel"
-        android:visibility="gone" />
+        <include layout="@layout/clock_panel"
+            android:id="@+id/clock_panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"/>
+
+        <include layout="@layout/weather_panel"
+            android:id="@+id/weather_panel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_below="@id/clock_panel"
+            android:visibility="gone"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 
     <include layout="@layout/calendar_panel"
         android:id="@+id/calendar_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
-        android:layout_below="@id/weather_panel"
+        android:layout_below="@id/main_panel"
         android:visibility="gone" />
 
 </RelativeLayout>

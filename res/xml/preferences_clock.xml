@@ -47,7 +47,7 @@
         <SwitchPreference
             android:key="clock_font_date"
             android:title="@string/clock_font_date_title"
-            android:defaultValue="true" />
+            android:defaultValue="false" />
 
         <ListPreference
             android:key="clock_font_color"
@@ -59,7 +59,7 @@
         <ListPreference
             android:key="clock_alarm_font_color"
             android:title="@string/font_color_alarm"
-            android:defaultValue="#80ffffff"
+            android:defaultValue="#ffffffff"
             android:entries="@array/font_color_entries"
             android:entryValues="@array/font_color_values" />
 
