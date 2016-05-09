@@ -69,7 +69,7 @@
                 android:gravity="center_horizontal"
                 android:singleLine="true"
                 android:ellipsize="marquee"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="@color/clock_white"
                 style="@style/label_shadow" />
 
             <TextView
@@ -80,7 +80,7 @@
                 android:ellipsize="marquee"
                 android:layout_marginStart="3dp"
                 android:textSize="17sp"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="@color/clock_white"
                 style="@style/label_shadow" />
 
         </LinearLayout>
@@ -89,9 +89,8 @@
             android:id="@+id/weather_temp_and_low_high"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:textSize="@dimen/label_font_size"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="13sp"
+            android:textColor="@color/clock_white"
             android:fontFamily="sans-serif-condensed"
             style="@style/label_shadow" />
 
@@ -99,8 +98,8 @@
             android:id="@+id/weather_uv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/label_font_size"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="13sp"
+            android:textColor="@color/clock_white"
             android:fontFamily="sans-serif-condensed"
             style="@style/label_shadow" />
 
@@ -108,8 +107,8 @@
             android:id="@+id/weather_aqi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/label_font_size"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="13sp"
+            android:textColor="@color/clock_white"
             android:fontFamily="sans-serif-condensed"
             style="@style/label_shadow" />
 
