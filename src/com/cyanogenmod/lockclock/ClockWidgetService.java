@@ -25,6 +25,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.mokee.utils.MoKeeUtils;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -40,6 +41,8 @@ import com.cyanogenmod.lockclock.misc.Preferences;
 import com.cyanogenmod.lockclock.misc.WidgetUtils;
 import com.cyanogenmod.lockclock.weather.Utils;
 import com.cyanogenmod.lockclock.weather.WeatherUpdateService;
+import com.mokee.cloud.calendar.Lunar;
+
 import static mokee.providers.WeatherContract.WeatherColumns.TempUnit.FAHRENHEIT;
 import static mokee.providers.WeatherContract.WeatherColumns.TempUnit.CELSIUS;
 import mokee.weather.MKWeatherManager;
@@ -47,6 +50,7 @@ import mokee.weather.WeatherInfo;
 import mokee.weather.util.WeatherUtils;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -291,6 +295,27 @@ public class ClockWidgetService extends IntentService {
                 clockViews.setViewVisibility(R.id.date_bold, View.GONE);
                 clockViews.setTextColor(R.id.date_regular, color);
             }
+
+            if (MoKeeUtils.isSupportLanguage(false)) {
+                Calendar calendar = Calendar.getInstance();
+                Lunar lunar = new Lunar(calendar);
+                String lunarDate = lunar.getLunarMonthString() + lunar.getLunarDayString();
+                if (Preferences.useBoldFontForDateAndAlarms(this)) {
+                    clockViews.setTextViewText(R.id.date_lunar_bold, " | " + lunarDate);
+                    clockViews.setTextColor(R.id.date_lunar_bold, color);
+                    clockViews.setViewVisibility(R.id.date_lunar_bold, View.VISIBLE);
+                    clockViews.setViewVisibility(R.id.date_lunar_thin, View.GONE);
+                } else {
+                    clockViews.setTextViewText(R.id.date_lunar_thin, " | " + lunarDate);
+                    clockViews.setTextColor(R.id.date_lunar_thin, color);
+                    clockViews.setViewVisibility(R.id.date_lunar_thin, View.VISIBLE);
+                    clockViews.setViewVisibility(R.id.date_lunar_bold, View.GONE);
+                }
+            } else {
+                clockViews.setViewVisibility(R.id.date_lunar_thin, View.GONE);
+                clockViews.setViewVisibility(R.id.date_lunar_bold, View.GONE);
+            }
+
         } else {
             clockViews.setViewVisibility(R.id.date, View.VISIBLE);
             clockViews.setTextColor(R.id.date, color);

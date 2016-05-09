@@ -90,24 +90,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
-            android:textSize="13sp"
+            android:textSize="@dimen/label_font_size"
             android:textColor="?android:attr/textColorPrimary"
+            android:fontFamily="sans-serif-condensed"
             style="@style/label_shadow" />
 
         <TextView
             android:id="@+id/weather_uv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            android:textSize="@dimen/label_font_size"
             android:textColor="?android:attr/textColorPrimary"
+            android:fontFamily="sans-serif-condensed"
             style="@style/label_shadow" />
 
         <TextView
             android:id="@+id/weather_aqi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
+            android:textSize="@dimen/label_font_size"
             android:textColor="?android:attr/textColorPrimary"
+            android:fontFamily="sans-serif-condensed"
             style="@style/label_shadow" />
 
     </LinearLayout>
