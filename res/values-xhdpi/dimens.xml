@@ -23,12 +23,11 @@
     <dimen name="widget_medium_font_size">48dp</dimen>
     <dimen name="label_font_size">14sp</dimen>
 
-    <dimen name="min_digital_widget_height">120dip</dimen>
+    <dimen name="min_digital_widget_height">40dip</dimen>
 
     <dimen name="min_digital_weather_height_lock">160dip</dimen>
     <dimen name="min_analog_weather_height_lock">160dip</dimen>
 
-    <dimen name="min_digital_calendar_height">142dip</dimen>
-    <dimen name="min_analog_calendar_height">142dip</dimen>
+    <dimen name="min_digital_calendar_height">110dip</dimen>
 
 </resources>

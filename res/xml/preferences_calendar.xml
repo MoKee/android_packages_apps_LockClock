@@ -59,12 +59,6 @@
 
     <PreferenceCategory android:title="@string/display_category">
 
-        <SwitchPreference
-            android:key="calendar_icon"
-            android:dependency="show_calendar"
-            android:title="@string/calendar_icon_title"
-            android:defaultValue="true" />
-
         <ListPreference
             android:key="calendar_show_location"
             android:dependency="show_calendar"

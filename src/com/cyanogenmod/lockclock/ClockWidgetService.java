@@ -147,7 +147,7 @@ public class ClockWidgetService extends IntentService {
 
             // Always Refresh the Clock widget
             refreshClock(remoteViews, smallWidget);
-            refreshAlarmStatus(remoteViews, smallWidget);
+            refreshAlarmStatus(remoteViews, smallWidget, id);
 
             // Refresh the time if using TextView Clock (API 16)
             if(!WidgetUtils.isTextClockAvailable()) {
@@ -321,8 +321,8 @@ public class ClockWidgetService extends IntentService {
     //===============================================================================================
     // Alarm related functionality
     //===============================================================================================
-    private void refreshAlarmStatus(RemoteViews alarmViews, boolean smallWidget) {
-        if (Preferences.showAlarm(this)) {
+    private void refreshAlarmStatus(RemoteViews alarmViews, boolean smallWidget, int id) {
+        if (Preferences.showAlarm(this) && WidgetUtils.canFitCalendar(this, id)) {
             String nextAlarm = getNextAlarm();
             if (!TextUtils.isEmpty(nextAlarm)) {
                 // An alarm is set, deal with displaying it
@@ -436,9 +436,11 @@ public class ClockWidgetService extends IntentService {
 
         String uv = w.getUv();
         weatherViews.setTextViewText(R.id.weather_uv, uv);
+        weatherViews.setTextColor(R.id.weather_uv, color);
 
         String aqi = w.getAqi();
         weatherViews.setTextViewText(R.id.weather_aqi, aqi);
+        weatherViews.setTextColor(R.id.weather_aqi, color);
 
         if (!TextUtils.isEmpty(uv) && !TextUtils.isEmpty(aqi) || !TextUtils.isEmpty(aqi)) {
             weatherViews.setViewVisibility(R.id.weather_uv, View.GONE);
@@ -549,25 +551,12 @@ public class ClockWidgetService extends IntentService {
         // Calendar icon: Overlay the selected color and set the imageview
         int color = Preferences.calendarFontColor(this);
 
-        // Hide the icon if preference set
-        if (Preferences.showCalendarIcon(this)) {
-            calendarViews.setImageViewBitmap(R.id.calendar_icon,
-                    IconUtils.getOverlaidBitmap(res, R.drawable.ic_lock_idle_calendar, color));
-        } else {
-            calendarViews.setImageViewBitmap(R.id.calendar_icon, null);
-        }
-
         // Set up and start the Calendar RemoteViews service
         final Intent remoteAdapterIntent = new Intent(this, CalendarViewsService.class);
         remoteAdapterIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId);
         remoteAdapterIntent.setData(Uri.parse(remoteAdapterIntent.toUri(Intent.URI_INTENT_SCHEME)));
         calendarViews.setRemoteAdapter(R.id.calendar_list, remoteAdapterIntent);
         calendarViews.setEmptyView(R.id.calendar_list, R.id.calendar_empty_view);
-
-        // Register an onClickListener on Calendar starting the Calendar app
-        final Intent calendarClickIntent = new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_APP_CALENDAR);
-        final PendingIntent calendarClickPendingIntent = PendingIntent.getActivity(this, 0, calendarClickIntent,PendingIntent.FLAG_UPDATE_CURRENT);
-        calendarViews.setOnClickPendingIntent(R.id.calendar_icon, calendarClickPendingIntent);
 
         final Intent eventClickIntent = new Intent(Intent.ACTION_VIEW);
         final PendingIntent eventClickPendingIntent = PendingIntent.getActivity(this, 0, eventClickIntent, PendingIntent.FLAG_UPDATE_CURRENT);

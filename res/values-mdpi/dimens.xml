@@ -23,6 +23,6 @@
     <dimen name="widget_medium_font_size">40dp</dimen>
     <dimen name="label_font_size">12sp</dimen>
 
-    <dimen name="min_digital_widget_height">100dip</dimen>
+    <dimen name="min_digital_widget_height">40dip</dimen>
 
 </resources>
