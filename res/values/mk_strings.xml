@@ -15,5 +15,6 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">MoKee Weather</string>
     <string name="weather_last_update_time">Last update %s</string>
 </resources>
