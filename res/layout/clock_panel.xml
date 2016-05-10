@@ -128,6 +128,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/clock_white"
+                android:ellipsize="marquee"
+                android:singleLine="true"
                 style="@style/label_bold"
                 android:visibility="gone"
                 android:gravity="center" />
@@ -135,6 +137,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/clock_white"
+                android:ellipsize="marquee"
+                android:singleLine="true"
                 style="@style/label_thin"
                 android:visibility="gone"
                 android:gravity="center" />

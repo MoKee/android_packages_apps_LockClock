@@ -24,8 +24,8 @@
     <dimen name="label_font_size">14sp</dimen>
 
     <dimen name="min_digital_widget_width">250dip</dimen>
-    <dimen name="min_digital_widget_height">40dip</dimen>
-    <dimen name="min_digital_widget_resize_height">40dip</dimen>
+    <dimen name="min_digital_widget_height">110dip</dimen>
+    <dimen name="min_digital_widget_resize_height">110dip</dimen>
     <dimen name="digital_widget_list_margin_top">12dip</dimen>
 
     <dimen name="def_digital_widget_width">160dip</dimen>
@@ -34,11 +34,9 @@
     <!-- Home screen -->
     <dimen name="min_digital_weather_width">240dip</dimen>
     <dimen name="min_digital_weather_height">40dip</dimen>
-    <dimen name="min_analog_weather_height">110dip</dimen>
 
     <!-- Lock screen -->
     <dimen name="min_digital_weather_height_lock">160dip</dimen>
-    <dimen name="min_analog_weather_height_lock">160dip</dimen>
 
     <dimen name="min_digital_calendar_height">110dip</dimen>
 

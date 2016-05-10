@@ -183,7 +183,7 @@ public class ClockWidgetService extends IntentService {
 
             // Resize the clock font
             float ratio = WidgetUtils.getScaleRatio(this, id);
-            setClockSize(remoteViews, (showWeather && canFitWeather) ? ratio / 2 : ratio);
+            setClockSize(remoteViews, (showWeather && canFitWeather) ? ratio / 1.75f : ratio);
 
             // Do the update
             mAppWidgetManager.updateAppWidget(id, remoteViews);
@@ -419,13 +419,23 @@ public class ClockWidgetService extends IntentService {
      */
     private void setWeatherData(RemoteViews weatherViews, boolean smallWidget, WeatherInfo w) {
         int color = Preferences.weatherFontColor(this);
-        int timestampColor = Preferences.weatherTimestampFontColor(this);
         String iconsSet = Preferences.getWeatherIconSet(this);
         final boolean useMetric = Preferences.useMetricUnits(mContext);
 
         // Reset no weather visibility
         weatherViews.setViewVisibility(R.id.weather_no_data, View.GONE);
         weatherViews.setViewVisibility(R.id.weather_refresh, View.GONE);
+
+        // Weather Image
+        int resId = IconUtils.getWeatherIconResource(mContext, iconsSet, w.getConditionCode());
+        weatherViews.setViewVisibility(R.id.weather_image, View.VISIBLE);
+        if (resId != 0) {
+            weatherViews.setImageViewResource(R.id.weather_image,
+                    IconUtils.getWeatherIconResource(mContext, iconsSet, w.getConditionCode()));
+        } else {
+            weatherViews.setImageViewBitmap(R.id.weather_image,
+                    IconUtils.getWeatherIconBitmap(mContext, iconsSet, color, w.getConditionCode()));
+        }
 
         // Weather Condition
         weatherViews.setTextViewText(R.id.weather_condition,
@@ -510,6 +520,7 @@ public class ClockWidgetService extends IntentService {
         } else {
             noData = getString(R.string.weather_source_not_selected);
         }
+        weatherViews.setViewVisibility(R.id.weather_image, View.GONE);
         if (!smallWidget) {
             weatherViews.setViewVisibility(R.id.weather_city, View.GONE);
             weatherViews.setViewVisibility(R.id.weather_condition, View.GONE);
