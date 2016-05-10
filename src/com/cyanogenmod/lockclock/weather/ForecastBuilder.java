@@ -99,12 +99,6 @@ public class ForecastBuilder {
 
         View view = inflater.inflate(resourceId, null);
 
-        // Set the weather source
-        TextView weatherSource = (TextView) view.findViewById(R.id.weather_source);
-        final MKWeatherManager mkWeatherManager = MKWeatherManager.getInstance(context);
-        String activeWeatherLabel = mkWeatherManager.getActiveWeatherServiceProviderLabel();
-        weatherSource.setText(activeWeatherLabel != null ? activeWeatherLabel : "");
-
         // Set the current conditions
         // Weather Image
         ImageView weatherImage = (ImageView) view.findViewById(R.id.weather_image);
@@ -157,6 +151,10 @@ public class ForecastBuilder {
         updateTime.setText(sb.toString());
         updateTime.setVisibility(
                 Preferences.showWeatherTimestamp(context) && TextUtils.isEmpty(uvLabel) ? View.VISIBLE : View.GONE);
+
+        TextView localUpdateTime = (TextView) view.findViewById(R.id.local_update_time);
+        localUpdateTime.setText(String.format(context.getString(R.string.weather_last_update_time), sb.toString()));
+        localUpdateTime.setVisibility(updateTime.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
 
         // Weather Humidity and Temps Panel additional items
         final String low = WeatherUtils.formatTemperature(todaysLow, tempUnit);
