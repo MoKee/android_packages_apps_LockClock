@@ -38,9 +38,10 @@
 
             <ImageView
                 android:id="@+id/weather_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
                 android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:gravity="center"
                 android:src="@android:drawable/ic_dialog_alert" />
 
@@ -176,7 +177,7 @@
                 android:singleLine="true"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="?android:attr/textColorPrimary"
-                android:paddingBottom="8dp" />
+                android:paddingBottom="4dp" />
 
         </RelativeLayout>
 
