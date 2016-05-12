@@ -460,14 +460,8 @@ public class ClockWidgetService extends IntentService {
             tempUnit = FAHRENHEIT;
         }
 
-        // Weather Temps Panel additional items
-        boolean invertLowhigh = Preferences.invertLowHighTemperature(this);
-        final String low = WeatherUtils.formatTemperature(todaysLow, tempUnit);
-        final String high = WeatherUtils.formatTemperature(todaysHigh, tempUnit);
-
-        weatherViews.setTextViewText(R.id.weather_temp_and_low_high,(invertLowhigh ? WidgetUtils.formatTemperatureUnit(high, tempUnit) + "/" + low
-                        : WidgetUtils.formatTemperatureUnit(low, tempUnit) + "/" + high) +  " | " + WeatherUtils.formatTemperature(temp, tempUnit));
-        weatherViews.setTextColor(R.id.weather_temp_and_low_high, color);
+        weatherViews.setTextViewText(R.id.weather_temp, WeatherUtils.formatTemperature(temp, tempUnit));
+        weatherViews.setTextColor(R.id.weather_temp, color);
 
         String uv = w.getUv();
         weatherViews.setTextViewText(R.id.weather_uv, uv);
@@ -541,9 +535,9 @@ public class ClockWidgetService extends IntentService {
             weatherViews.setViewVisibility(R.id.weather_no_data, firstRun ? View.GONE : View.VISIBLE);
             weatherViews.setViewVisibility(R.id.weather_refresh,  firstRun ? View.GONE : View.VISIBLE);
         } else {
-            weatherViews.setTextViewText(R.id.weather_temp_and_low_high, firstRun ? null : noData);
+            weatherViews.setTextViewText(R.id.weather_temp, firstRun ? null : noData);
             weatherViews.setTextViewText(R.id.weather_condition, firstRun ? null : getString(R.string.weather_tap_to_refresh));
-            weatherViews.setTextColor(R.id.weather_temp_and_low_high, color);
+            weatherViews.setTextColor(R.id.weather_temp, color);
             weatherViews.setTextColor(R.id.weather_condition, color);
         }
 
