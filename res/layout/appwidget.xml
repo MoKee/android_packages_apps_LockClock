@@ -24,14 +24,15 @@
         android:id="@+id/main_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="1">
 
         <include layout="@layout/clock_panel"
             android:id="@+id/clock_panel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
+            android:layout_weight="0.5"/>
 
         <include layout="@layout/weather_panel"
             android:id="@+id/weather_panel"
@@ -40,7 +41,7 @@
             android:layout_gravity="center_vertical"
             android:layout_below="@id/clock_panel"
             android:visibility="gone"
-            android:layout_weight="1" />
+            android:layout_weight="0.5" />
 
     </LinearLayout>
 

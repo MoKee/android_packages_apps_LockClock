@@ -23,8 +23,6 @@
     <dimen name="widget_medium_font_size">40dp</dimen>
     <dimen name="label_font_size">12sp</dimen>
 
-    <dimen name="min_digital_widget_height">110dip</dimen>
-
     <!-- Lock screen -->
     <dimen name="min_digital_weather_height_lock">125dip</dimen>
 

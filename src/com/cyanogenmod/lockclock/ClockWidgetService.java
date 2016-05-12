@@ -183,7 +183,7 @@ public class ClockWidgetService extends IntentService {
 
             // Resize the clock font
             float ratio = WidgetUtils.getScaleRatio(this, id);
-            setClockSize(remoteViews, (showWeather && canFitWeather) ? ratio / 1.75f : ratio);
+            setClockSize(remoteViews, (showWeather && canFitWeather) ? ratio / 1.6f : ratio);
 
             // Do the update
             mAppWidgetManager.updateAppWidget(id, remoteViews);

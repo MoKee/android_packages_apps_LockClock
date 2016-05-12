@@ -26,8 +26,6 @@
     <dimen name="label_font_size">18sp</dimen>
 
     <dimen name="min_digital_widget_width">300dip</dimen>
-    <dimen name="min_digital_widget_height">110dip</dimen>
-    <dimen name="min_digital_widget_resize_height">120dip</dimen>
     <dimen name="def_digital_widget_width">200dip</dimen>
     <dimen name="def_digital_widget_height">190dip</dimen>
 
