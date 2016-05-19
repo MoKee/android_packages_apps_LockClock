@@ -49,10 +49,9 @@ import com.cyanogenmod.lockclock.R;
 
 public class IconSelectionPreference extends DialogPreference implements
         AdapterView.OnItemClickListener {
-    private static final String INTENT_CATEGORY_ICONPACK = "com.dvtonder.chronus.ICON_PACK";
+    private static final String INTENT_CATEGORY_ICONPACK = "com.mokee.zeus.ICON_PACK";
 
     private static final String SEARCH_URI = "https://market.android.com/search?q=%s&c=apps";
-    private static final String APP_URI = "market://details?id=%s";
 
     private static class IconSetDescriptor {
         String name;
@@ -89,12 +88,8 @@ public class IconSelectionPreference extends DialogPreference implements
     }
 
     private static final IconSetDescriptor ICON_SETS[] = new IconSetDescriptor[] {
-        new IconSetDescriptor("color", R.string.weather_icons_standard,
-                R.drawable.weather_color_28),
-        new IconSetDescriptor("mono", R.string.weather_icons_monochrome,
-                R.drawable.weather_28),
-        new IconSetDescriptor("vclouds", R.string.weather_icons_vclouds,
-                R.drawable.weather_vclouds_28)
+        new IconSetDescriptor("mokee", R.string.weather_icons_mokee,
+                R.drawable.weather_mokee_103)
     };
 
     private static final IntentFilter PACKAGE_CHANGE_FILTER = new IntentFilter();

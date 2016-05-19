@@ -37,7 +37,6 @@ public class Constants {
     public static final String WEATHER_USE_CUSTOM_LOCATION = "weather_use_custom_location";
     public static final String WEATHER_CUSTOM_LOCATION_CITY = "weather_custom_location_city";
     public static final String WEATHER_CUSTOM_LOCATION = "weather_custom_location";
-    public static final String WEATHER_LOCATION = "weather_location";
     public static final String WEATHER_SHOW_LOCATION = "weather_show_location";
     public static final String WEATHER_SHOW_TIMESTAMP = "weather_show_timestamp";
     public static final String WEATHER_USE_METRIC = "weather_use_metric";
@@ -47,8 +46,6 @@ public class Constants {
     public static final String WEATHER_FONT_COLOR = "weather_font_color";
     public static final String WEATHER_TIMESTAMP_FONT_COLOR = "weather_timestamp_font_color";
     public static final String WEATHER_ICONS = "weather_icons";
-    public static final String MONOCHROME = "mono";
-    public static final String COLOR_STD = "color";
     public static final String SHOW_CALENDAR = "show_calendar";
     public static final String CALENDAR_LIST = "calendar_list";
     public static final String CALENDAR_LOOKAHEAD = "calendar_lookahead";
@@ -88,9 +85,6 @@ public class Constants {
     public static final int CALENDAR_FORMAT_FUTURE = CALENDAR_FORMAT_ABBREV_DATETIME;
 
     public static final String DEFAULT_LIGHT_COLOR = "#ffffffff";
-    public static final String DEFAULT_DARK_COLOR = "#80ffffff";
-    public static final String DEFAULT_BACKGROUND_COLOR = "#00000000";
-    public static final int DEFAULT_BACKGROUND_TRANSPARENCY = 0;
 
     // Intent actions
     public static final String ACTION_SHOW_FORECAST = "com.cyanogenmod.lockclock.action.SHOW_FORECAST";

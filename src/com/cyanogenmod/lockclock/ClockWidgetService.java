@@ -195,7 +195,7 @@ public class ClockWidgetService extends IntentService {
     //===============================================================================================
     private void refreshClock(RemoteViews clockViews, boolean smallWidget) {
         // Hours/Minutes is specific to Digital, set it's size
-        refreshClockFont(clockViews, smallWidget);
+        refreshClockFont(clockViews);
         clockViews.setViewVisibility(R.id.digital_clock, View.VISIBLE);
 
         // Date/Alarm is common to both clocks, set it's size
@@ -245,7 +245,7 @@ public class ClockWidgetService extends IntentService {
         }
     }
 
-    private void refreshClockFont(RemoteViews clockViews, boolean smallWidget) {
+    private void refreshClockFont(RemoteViews clockViews) {
         int color = Preferences.clockFontColor(this);
         String amPM = new SimpleDateFormat("a", Locale.getDefault()).format(new Date());
 
@@ -445,18 +445,12 @@ public class ClockWidgetService extends IntentService {
 
         // Weather Temps Panel
         double temp = w.getTemperature();
-        double todaysLow = w.getTodaysLow();
-        double todaysHigh = w.getTodaysHigh();
         int tempUnit = w.getTemperatureUnit();
         if (tempUnit == FAHRENHEIT && useMetric) {
             temp = WeatherUtils.fahrenheitToCelsius(temp);
-            todaysLow = WeatherUtils.fahrenheitToCelsius(todaysLow);
-            todaysHigh = WeatherUtils.fahrenheitToCelsius(todaysHigh);
             tempUnit = CELSIUS;
         } else if (tempUnit == CELSIUS && !useMetric) {
             temp = WeatherUtils.celsiusToFahrenheit(temp);
-            todaysLow = WeatherUtils.celsiusToFahrenheit(todaysLow);
-            todaysHigh = WeatherUtils.celsiusToFahrenheit(todaysHigh);
             tempUnit = FAHRENHEIT;
         }
 
@@ -577,10 +571,6 @@ public class ClockWidgetService extends IntentService {
     // Calendar related functionality
     //===============================================================================================
     private void refreshCalendar(RemoteViews calendarViews, int widgetId) {
-        final Resources res = getResources();
-        // Calendar icon: Overlay the selected color and set the imageview
-        int color = Preferences.calendarFontColor(this);
-
         // Set up and start the Calendar RemoteViews service
         final Intent remoteAdapterIntent = new Intent(this, CalendarViewsService.class);
         remoteAdapterIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId);

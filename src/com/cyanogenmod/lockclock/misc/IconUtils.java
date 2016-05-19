@@ -30,28 +30,26 @@ import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import com.cyanogenmod.lockclock.R;
-import com.cyanogenmod.lockclock.weather.Utils;
 
 public class IconUtils {
     private static final String TAG = "IconUtils";
     private static boolean D = Constants.DEBUG;
 
     public static int getWeatherIconResource(Context context, String iconSet, int conditionCode) {
-        if (iconSet.startsWith("ext:") || iconSet.equals(Constants.MONOCHROME)) {
+        if (iconSet.startsWith("ext:")) {
             return 0;
         }
 
         final Resources res = context.getResources();
         final int resId = res.getIdentifier("weather_" + iconSet + "_"
-                + Utils.addOffsetToConditionCodeFromWeatherContract(conditionCode), "drawable",
-                        context.getPackageName());
+                + conditionCode, "drawable", context.getPackageName());
 
         if (resId != 0) {
             return resId;
         }
 
         // Use the default color set unknown icon
-        return R.drawable.weather_color_na;
+        return R.drawable.weather_mokee_na;
     }
 
     public static Bitmap getWeatherIconBitmap(Context context, String iconSet,
@@ -61,34 +59,30 @@ public class IconUtils {
 
     public static Bitmap getWeatherIconBitmap(Context context, String iconSet,
             int color, int conditionCode, int density) {
-        boolean isMonoSet = Constants.MONOCHROME.equals(iconSet);
         Resources res = null;
         int resId = 0;
-        int fixedConditionCode = Utils.addOffsetToConditionCodeFromWeatherContract(conditionCode);
 
         if (iconSet.startsWith("ext:")) {
             String packageName = iconSet.substring(4);
             try {
                 res = context.getPackageManager().getResourcesForApplication(packageName);
-                resId = res.getIdentifier("weather_" + fixedConditionCode, "drawable", packageName);
+                resId = res.getIdentifier("weather_" + conditionCode, "drawable", packageName);
             } catch (PackageManager.NameNotFoundException e) {
                 // fall back to colored icons
-                iconSet = Constants.COLOR_STD;
+                iconSet = "mokee";
             }
         }
         if (resId == 0) {
-            String identifier = isMonoSet
-                    ? "weather_" + fixedConditionCode : "weather_"
-                        + iconSet + "_" + fixedConditionCode;
+            String identifier = "weather_" + iconSet + "_" + conditionCode;
             res = context.getResources();
             resId = res.getIdentifier(identifier, "drawable", context.getPackageName());
         }
 
         if (resId == 0) {
-            resId = isMonoSet ? R.drawable.weather_na : R.drawable.weather_color_na;
+            resId = R.drawable.weather_mokee_na;
         }
 
-        return getOverlaidBitmap(res, resId, isMonoSet ? color : 0, density);
+        return getOverlaidBitmap(res, resId, color, density);
     }
 
     public static Bitmap getOverlaidBitmap(Resources res, int resId, int color) {

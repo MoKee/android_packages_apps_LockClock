@@ -21,11 +21,6 @@ import android.content.res.Resources;
 import com.cyanogenmod.lockclock.R;
 import mokee.providers.WeatherContract;
 
-import static mokee.providers.WeatherContract.WeatherColumns.WeatherCode.NOT_AVAILABLE;
-import static mokee.providers.WeatherContract.WeatherColumns.WeatherCode.SCATTERED_THUNDERSTORMS;
-import static mokee.providers.WeatherContract.WeatherColumns.WeatherCode.SCATTERED_SNOW_SHOWERS;
-import static mokee.providers.WeatherContract.WeatherColumns.WeatherCode.ISOLATED_THUNDERSHOWERS;
-
 import java.text.DecimalFormat;
 
 public final class Utils {
@@ -84,9 +79,8 @@ public final class Utils {
      */
     public static String resolveWeatherCondition(Context context, int conditionCode) {
         final Resources res = context.getResources();
-        final int resId = res.getIdentifier("weather_"
-                + Utils.addOffsetToConditionCodeFromWeatherContract(conditionCode), "string",
-                        context.getPackageName());
+        final int resId = res.getIdentifier("weather_code_"
+                + conditionCode, "string", context.getPackageName());
         if (resId != 0) {
             return res.getString(resId);
         }
@@ -160,22 +154,4 @@ public final class Utils {
         return km * 0.6214d;
     }
 
-    /**
-     * Adds an offset to the condition code reported by the active weather service provider.
-     * @param conditionCode The condition code from the Weather API
-     * @return A condition code that correctly maps to our resource IDs
-     */
-    public static int addOffsetToConditionCodeFromWeatherContract(int conditionCode) {
-        if (conditionCode <= WeatherContract.WeatherColumns.WeatherCode.SHOWERS) {
-            return conditionCode;
-        } else if (conditionCode <= SCATTERED_THUNDERSTORMS) {
-            return conditionCode + 1;
-        } else if (conditionCode <= SCATTERED_SNOW_SHOWERS) {
-            return conditionCode + 2;
-        } else if (conditionCode <= ISOLATED_THUNDERSHOWERS) {
-            return conditionCode + 3;
-        } else {
-            return NOT_AVAILABLE;
-        }
-    }
 }
