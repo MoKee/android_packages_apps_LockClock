@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">魔趣天气</string>
+  <string name="weather_icons_mokee">默认</string>
   <string name="weather_code_0">晴天</string>
   <string name="weather_code_1">多云</string>
   <string name="weather_code_2">少云</string>

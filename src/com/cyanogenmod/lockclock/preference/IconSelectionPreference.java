@@ -275,7 +275,7 @@ public class IconSelectionPreference extends DialogPreference implements
                 ApplicationInfo appInfo = info.activityInfo.applicationInfo;
                 try {
                     Resources res = pm.getResourcesForApplication(appInfo);
-                    int previewResId = res.getIdentifier("weather_28", "drawable", appInfo.packageName);
+                    int previewResId = res.getIdentifier("weather_3", "drawable", appInfo.packageName);
                     Drawable preview = previewResId != 0 ? res.getDrawable(previewResId) : null;
                     result.add(new IconSetDescriptor(appInfo.packageName,
                             appInfo.loadLabel(pm), preview));

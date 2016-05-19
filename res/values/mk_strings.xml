@@ -15,8 +15,8 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Zeus</string>
-    <string name="weather_icons_mokee">MoKee</string>
+    <string name="app_name" translatable="false">Zeus</string>
+    <string name="weather_icons_mokee">Default</string>
     <string name="weather_last_update_time">Last update %s</string>
     <string name="weather_code_0">Sunny</string>
     <string name="weather_code_1">Cloudy</string>
