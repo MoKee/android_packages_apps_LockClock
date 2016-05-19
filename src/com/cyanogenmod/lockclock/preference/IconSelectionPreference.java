@@ -89,7 +89,7 @@ public class IconSelectionPreference extends DialogPreference implements
 
     private static final IconSetDescriptor ICON_SETS[] = new IconSetDescriptor[] {
         new IconSetDescriptor("mokee", R.string.weather_icons_mokee,
-                R.drawable.weather_mokee_103)
+                R.drawable.weather_mokee_3)
     };
 
     private static final IntentFilter PACKAGE_CHANGE_FILTER = new IntentFilter();

@@ -16,11 +16,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">魔趣天气</string>
-  <string name="weather_code_0">晴</string>
+  <string name="weather_code_0">晴天</string>
   <string name="weather_code_1">多云</string>
   <string name="weather_code_2">少云</string>
   <string name="weather_code_3">晴间多云</string>
-  <string name="weather_code_4">阴</string>
+  <string name="weather_code_4">阴天</string>
   <string name="weather_code_5">有风</string>
   <string name="weather_code_6">平静</string>
   <string name="weather_code_7">微风</string>
