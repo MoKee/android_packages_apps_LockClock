@@ -15,6 +15,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="app_name">魔趣天气</string>
-  <string name="weather_last_update_time">最后更新 %s</string>
+  <string name="app_name">Météo Mokee</string>
+  <string name="weather_last_update_time">Dernière mise à jour %s</string>
 </resources>
