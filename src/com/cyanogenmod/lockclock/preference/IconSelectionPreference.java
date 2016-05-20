@@ -46,6 +46,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cyanogenmod.lockclock.R;
+import com.cyanogenmod.lockclock.misc.Constants;
 
 public class IconSelectionPreference extends DialogPreference implements
         AdapterView.OnItemClickListener {
@@ -88,7 +89,7 @@ public class IconSelectionPreference extends DialogPreference implements
     }
 
     private static final IconSetDescriptor ICON_SETS[] = new IconSetDescriptor[] {
-        new IconSetDescriptor("mokee", R.string.weather_icons_mokee,
+        new IconSetDescriptor(Constants.WEATHER_ICONS_DEFAULT, R.string.weather_icons_mokee,
                 R.drawable.weather_mokee_3)
     };
 

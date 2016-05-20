@@ -36,7 +36,7 @@ public class IconUtils {
     private static boolean D = Constants.DEBUG;
 
     public static int getWeatherIconResource(Context context, String iconSet, int conditionCode) {
-        if (iconSet.startsWith("ext:")) {
+        if (iconSet.startsWith("ext:") || iconSet.equals(Constants.WEATHER_ICONS_DEFAULT)) {
             return 0;
         }
 
@@ -69,7 +69,7 @@ public class IconUtils {
                 resId = res.getIdentifier("weather_" + conditionCode, "drawable", packageName);
             } catch (PackageManager.NameNotFoundException e) {
                 // fall back to colored icons
-                iconSet = "mokee";
+                iconSet = Constants.WEATHER_ICONS_DEFAULT;
             }
         }
         if (resId == 0) {

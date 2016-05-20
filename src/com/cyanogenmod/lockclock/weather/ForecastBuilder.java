@@ -18,7 +18,6 @@ package com.cyanogenmod.lockclock.weather;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Color;
 import android.text.format.DateFormat;
 import android.text.TextUtils;
 import android.util.Log;
@@ -37,8 +36,6 @@ import static mokee.providers.WeatherContract.WeatherColumns.WindSpeedUnit.KPH;
 import static mokee.providers.WeatherContract.WeatherColumns.TempUnit.FAHRENHEIT;
 import static mokee.providers.WeatherContract.WeatherColumns.TempUnit.CELSIUS;
 
-import mokee.providers.WeatherContract;
-import mokee.weather.MKWeatherManager;
 import mokee.weather.WeatherInfo;
 import mokee.weather.WeatherInfo.DayForecast;
 import mokee.weather.util.WeatherUtils;
@@ -65,8 +62,7 @@ public class ForecastBuilder {
     public static View buildFullPanel(Context context, int resourceId, WeatherInfo w) {
 
         // Load some basic settings
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE); 
-        int color = Preferences.weatherFontColor(context);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         boolean invertLowHigh = Preferences.invertLowHighTemperature(context);
         final boolean useMetric = Preferences.useMetricUnits(context);
 
@@ -103,7 +99,7 @@ public class ForecastBuilder {
         // Weather Image
         ImageView weatherImage = (ImageView) view.findViewById(R.id.weather_image);
         String iconsSet = Preferences.getWeatherIconSet(context);
-        weatherImage.setImageBitmap(IconUtils.getWeatherIconBitmap(context, iconsSet, color,
+        weatherImage.setImageBitmap(IconUtils.getWeatherIconBitmap(context, iconsSet, 0,
                 w.getConditionCode(), IconUtils.getNextHigherDensity(context)));
 
         // Weather Condition
@@ -199,7 +195,6 @@ public class ForecastBuilder {
         // Get things ready
         LayoutInflater inflater
               = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        int color = Preferences.weatherFontColor(context);
         boolean invertLowHigh = Preferences.invertLowHighTemperature(context);
         final boolean useMetric = Preferences.useMetricUnits(context);
 
@@ -236,7 +231,7 @@ public class ForecastBuilder {
               image.setImageResource(resId);
             } else {
               image.setImageBitmap(IconUtils.getWeatherIconBitmap(context, iconsSet,
-                      color, d.getConditionCode()));
+                      0, d.getConditionCode()));
             }
 
             // Temperatures

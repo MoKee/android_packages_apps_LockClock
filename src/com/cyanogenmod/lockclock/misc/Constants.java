@@ -46,6 +46,7 @@ public class Constants {
     public static final String WEATHER_FONT_COLOR = "weather_font_color";
     public static final String WEATHER_TIMESTAMP_FONT_COLOR = "weather_timestamp_font_color";
     public static final String WEATHER_ICONS = "weather_icons";
+    public static final String WEATHER_ICONS_DEFAULT = "mokee";
     public static final String SHOW_CALENDAR = "show_calendar";
     public static final String CALENDAR_LIST = "calendar_list";
     public static final String CALENDAR_LOOKAHEAD = "calendar_lookahead";

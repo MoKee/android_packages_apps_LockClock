@@ -167,7 +167,7 @@ public class Preferences {
     }
 
     public static String getWeatherIconSet(Context context) {
-        return getPrefs(context).getString(Constants.WEATHER_ICONS, "mokee");
+        return getPrefs(context).getString(Constants.WEATHER_ICONS, Constants.WEATHER_ICONS_DEFAULT);
     }
 
     public static boolean useMetricUnits(Context context) {
