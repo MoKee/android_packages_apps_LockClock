@@ -16,6 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="weather_icons_mokee">默认</string>
+  <string name="weather_last_update_time">最后更新 %s</string>
   <string name="weather_code_0">晴天</string>
   <string name="weather_code_1">多云</string>
   <string name="weather_code_2">少云</string>
@@ -67,5 +68,4 @@
   <string name="weather_code_48">强沙尘暴</string>
   <string name="weather_code_49">热</string>
   <string name="weather_code_50">冷</string>
-  <string name="weather_last_update_time">最后更新 %s</string>
 </resources>

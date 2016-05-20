@@ -15,6 +15,5 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="weather_icons_mokee">Výchozí</string>
-  <string name="weather_last_update_time">Poslední aktualizace: %s</string>
+  <string name="weather_icons_mokee">ברירת מחדל</string>
 </resources>
