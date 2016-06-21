@@ -20,6 +20,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.text.TextUtils;
+import com.cyanogenmod.lockclock.weather.Utils;
 import mokee.weather.WeatherInfo;
 import mokee.weather.WeatherLocation;
 import org.json.JSONArray;
@@ -71,7 +72,8 @@ public class Preferences {
     }
 
     public static boolean showWeather(Context context) {
-        return getPrefs(context).getBoolean(Constants.SHOW_WEATHER, true);
+        return getPrefs(context).getBoolean(Constants.SHOW_WEATHER, true)
+                && Utils.isWeatherServiceAvailable(context);
     }
 
     public static boolean showCalendar(Context context) {
