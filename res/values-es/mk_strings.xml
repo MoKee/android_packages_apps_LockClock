@@ -16,4 +16,18 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="weather_icons_mokee">Predeterminado</string>
+  <string name="weather_code_0">Soleado</string>
+  <string name="weather_code_1">Nublado</string>
+  <string name="weather_code_2">Algunas nubes</string>
+  <string name="weather_code_11">Fuerte viento</string>
+  <string name="weather_code_14">Tormenta</string>
+  <string name="weather_code_15">Tormenta fuerte</string>
+  <string name="weather_code_22">Tormeta fuerte</string>
+  <string name="weather_code_23">Granizo</string>
+  <string name="weather_code_24">Lluvia ligera</string>
+  <string name="weather_code_25">Lluvia moderada</string>
+  <string name="weather_code_26">Lluvias torrenciales</string>
+  <string name="weather_code_27">Lluvia extrema</string>
+  <string name="weather_code_29">Tormenta</string>
+  <string name="weather_code_35">Fuertes nevadas</string>
 </resources>

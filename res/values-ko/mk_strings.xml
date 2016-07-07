@@ -19,8 +19,8 @@
   <string name="weather_last_update_time">마지막 업데이트: %s</string>
   <string name="weather_code_0">맑음</string>
   <string name="weather_code_1">흐림</string>
-  <string name="weather_code_2">구름조금</string>
-  <string name="weather_code_3">구름조금</string>
+  <string name="weather_code_2">대체로 흐림</string>
+  <string name="weather_code_3">대체로 흐림</string>
   <string name="weather_code_4">흐림</string>
   <string name="weather_code_5">바람</string>
   <string name="weather_code_6">고요한</string>
