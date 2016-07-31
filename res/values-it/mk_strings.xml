@@ -38,6 +38,8 @@
   <string name="weather_code_18">Tempesta tropicale</string>
   <string name="weather_code_19">Aquazzone</string>
   <string name="weather_code_20">Forte acquazzone</string>
+  <string name="weather_code_21">Temporale</string>
+  <string name="weather_code_22">Forti temporali</string>
   <string name="weather_code_23">Grandine</string>
   <string name="weather_code_24">Pioggia leggera</string>
   <string name="weather_code_25">Pioggia moderata</string>
@@ -54,6 +56,8 @@
   <string name="weather_code_36">Bufera di neve</string>
   <string name="weather_code_37">Nevischio</string>
   <string name="weather_code_38">Pioggia con neve</string>
+  <string name="weather_code_39">Pioggia di neve</string>
+  <string name="weather_code_40">Raffiche di neve</string>
   <string name="weather_code_41">Nebbia</string>
   <string name="weather_code_42">Nebbioso</string>
   <string name="weather_code_43">Foschia</string>
