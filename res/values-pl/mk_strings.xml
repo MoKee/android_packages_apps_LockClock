@@ -16,4 +16,14 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="weather_icons_mokee">Domyślnie</string>
+  <string name="weather_last_update_time">Ostatnia aktualizacja %s</string>
+  <string name="weather_code_0">Słonecznie</string>
+  <string name="weather_code_1">Pochmurnie</string>
+  <string name="weather_code_2">Kilka chmur</string>
+  <string name="weather_code_3">Częściowe zachmurzenie</string>
+  <string name="weather_code_4">Pochmurno</string>
+  <string name="weather_code_5">Wietrznie</string>
+  <string name="weather_code_6">Spokojna</string>
+  <string name="weather_code_7">Słaby wiatr</string>
+  <string name="weather_code_8">Umiarkowany wiatr</string>
 </resources>
