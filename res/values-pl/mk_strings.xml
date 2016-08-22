@@ -26,4 +26,14 @@
   <string name="weather_code_6">Spokojna</string>
   <string name="weather_code_7">Słaby wiatr</string>
   <string name="weather_code_8">Umiarkowany wiatr</string>
+  <string name="weather_code_9">Świeży powiew</string>
+  <string name="weather_code_14">Burza</string>
+  <string name="weather_code_29">Burza</string>
+  <string name="weather_code_33">Lekkie opady śniegu</string>
+  <string name="weather_code_34">Umiarkowane opady śniegu</string>
+  <string name="weather_code_35">Intensywne opady śniegu</string>
+  <string name="weather_code_38">Deszcz ze śniegiem</string>
+  <string name="weather_code_42">Mglisto</string>
+  <string name="weather_code_49">Gorąco</string>
+  <string name="weather_code_50">Zimno</string>
 </resources>
