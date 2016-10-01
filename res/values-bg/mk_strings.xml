@@ -66,4 +66,6 @@
   <string name="weather_code_46">Вулканична пепел</string>
   <string name="weather_code_47">Прашна буря</string>
   <string name="weather_code_48">Пясъчна буря</string>
+  <string name="weather_code_49">Горещ</string>
+  <string name="weather_code_50">Студен</string>
 </resources>
