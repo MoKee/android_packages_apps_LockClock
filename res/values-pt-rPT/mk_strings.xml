@@ -25,4 +25,6 @@
   <string name="weather_code_9">Brisa Fresca</string>
   <string name="weather_code_11">Vento Forte</string>
   <string name="weather_code_12">Temporal</string>
+  <string name="weather_code_17">Tornado</string>
+  <string name="weather_code_18">Tempestade Tropical</string>
 </resources>
