@@ -16,4 +16,25 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="weather_icons_mokee">デフォルト</string>
+  <string name="weather_last_update_time">最終更新 %s</string>
+  <string name="weather_code_0">晴れ</string>
+  <string name="weather_code_1">曇り</string>
+  <string name="weather_code_2">やや曇り</string>
+  <string name="weather_code_3">少し曇り</string>
+  <string name="weather_code_5">強風</string>
+  <string name="weather_code_6">凪</string>
+  <string name="weather_code_7">そよ風</string>
+  <string name="weather_code_8">中くらいの風</string>
+  <string name="weather_code_9">新鮮な風</string>
+  <string name="weather_code_10">強い風</string>
+  <string name="weather_code_11">強風</string>
+  <string name="weather_code_12">突風</string>
+  <string name="weather_code_13">暴風</string>
+  <string name="weather_code_14">荒らし</string>
+  <string name="weather_code_15">暴風</string>
+  <string name="weather_code_16">台風</string>
+  <string name="weather_code_17">竜巻</string>
+  <string name="weather_code_18">熱帯暴風雨</string>
+  <string name="weather_code_19">にわか雨</string>
+  <string name="weather_code_29">荒らし</string>
 </resources>
