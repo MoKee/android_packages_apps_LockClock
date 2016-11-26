@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="weather_icons_mokee">默認位置</string>
+  <string name="weather_icons_mokee">預設位置</string>
   <string name="weather_last_update_time">最後更新於 %s</string>
   <string name="weather_code_0">晴</string>
   <string name="weather_code_1">陰</string>
