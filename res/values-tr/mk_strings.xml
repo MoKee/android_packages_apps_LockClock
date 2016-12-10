@@ -31,7 +31,9 @@
   <string name="weather_code_11">Yüksek Rüzgar</string>
   <string name="weather_code_12">Fırtına</string>
   <string name="weather_code_13">Güçlü fırtına</string>
+  <string name="weather_code_14">Fırtına</string>
   <string name="weather_code_15">Şiddetli fırtına</string>
+  <string name="weather_code_16">Kasırga</string>
   <string name="weather_code_17">Hortum</string>
   <string name="weather_code_18">Tropik Fırtına</string>
   <string name="weather_code_19">Hafif yağmur</string>
@@ -40,6 +42,7 @@
   <string name="weather_code_22">Ağır fırtına</string>
   <string name="weather_code_23">Dolu</string>
   <string name="weather_code_24">Hafif Yağmur</string>
+  <string name="weather_code_25">Hafif Yağmurlu</string>
   <string name="weather_code_26">Sağanak yağmur</string>
   <string name="weather_code_27">Aşırı yağmur</string>
   <string name="weather_code_28">Çiseleyen yağmur</string>
@@ -54,10 +57,15 @@
   <string name="weather_code_37">Sulu kar</string>
   <string name="weather_code_38">Kar yağmurla karışık</string>
   <string name="weather_code_39">Hafif kar</string>
+  <string name="weather_code_40">Ani ve şiddetli kar</string>
+  <string name="weather_code_41">Sis</string>
   <string name="weather_code_42">Sis</string>
   <string name="weather_code_43">Puslu</string>
   <string name="weather_code_44">Kum</string>
   <string name="weather_code_45">Tozlu</string>
   <string name="weather_code_46">Volkanik kül</string>
+  <string name="weather_code_47">Toz fırtınası</string>
   <string name="weather_code_48">Kum fırtınası</string>
+  <string name="weather_code_49">Kısa Süreli</string>
+  <string name="weather_code_50">Soğuk</string>
 </resources>
