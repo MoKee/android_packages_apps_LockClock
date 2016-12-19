@@ -89,13 +89,11 @@
                 android:id="@+id/weather_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textStyle="bold"
                 android:gravity="center_horizontal"
                 android:singleLine="true"
                 android:ellipsize="marquee"
                 android:textColor="@color/clock_white"
-                style="@style/label_shadow" />
+                style="@style/label_bold" />
 
             <TextView
                 android:id="@+id/weather_condition"
@@ -104,9 +102,8 @@
                 android:singleLine="true"
                 android:ellipsize="marquee"
                 android:layout_marginStart="3dp"
-                android:textSize="16sp"
                 android:textColor="@color/clock_white"
-                style="@style/label_shadow" />
+                style="@style/label_thin" />
 
         </LinearLayout>
 
