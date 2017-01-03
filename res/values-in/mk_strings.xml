@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="weather_icons_mokee">Standar</string>
+  <string name="weather_icons_mokee">Bawaan</string>
   <string name="weather_last_update_time">Terakhir diperbarui %s</string>
   <string name="weather_code_0">Cerah</string>
   <string name="weather_code_1">Berawan</string>
