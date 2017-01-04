@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="weather_icons_mokee">Standar</string>
+  <string name="weather_icons_mokee">Bawaan</string>
   <string name="weather_last_update_time">Terakhir diperbarui %s</string>
   <string name="weather_code_0">Cerah</string>
   <string name="weather_code_1">Berawan</string>
@@ -32,7 +32,7 @@
   <string name="weather_code_12">Badai</string>
   <string name="weather_code_13">Badai Kencang</string>
   <string name="weather_code_14">Badai</string>
-  <string name="weather_code_15">Badai Ganas</string>
+  <string name="weather_code_15">Badai Hebat</string>
   <string name="weather_code_16">Badai</string>
   <string name="weather_code_17">Angin topan</string>
   <string name="weather_code_18">Badai Tropis</string>
@@ -43,27 +43,27 @@
   <string name="weather_code_23">Hujan Salju</string>
   <string name="weather_code_24">Gerimis</string>
   <string name="weather_code_25">Hujan Sedang-sedang</string>
-  <string name="weather_code_26">Hujan lebat</string>
-  <string name="weather_code_27">Hujan ekstrim</string>
+  <string name="weather_code_26">Hujan Lebat</string>
+  <string name="weather_code_27">Hujan Ekstrim</string>
   <string name="weather_code_28">Hujan Gerimis</string>
   <string name="weather_code_29">Badai</string>
   <string name="weather_code_30">Badai Besar</string>
-  <string name="weather_code_31">Badai Parah</string>
+  <string name="weather_code_31">Badai Hebat</string>
   <string name="weather_code_32">Hujan Dingin</string>
-  <string name="weather_code_33">Salju ringan</string>
+  <string name="weather_code_33">Salju Ringan</string>
   <string name="weather_code_34">Salju Sedang-sedang</string>
   <string name="weather_code_35">Salju Lebat</string>
   <string name="weather_code_36">Badai Salju</string>
-  <string name="weather_code_37">Hujan bercampur salju</string>
-  <string name="weather_code_38">Hujan salju</string>
+  <string name="weather_code_37">Hujan es</string>
+  <string name="weather_code_38">Hujan Salju</string>
   <string name="weather_code_39">Gerimis Salju</string>
-  <string name="weather_code_40">Salju tak tentu</string>
+  <string name="weather_code_40">Bersalju</string>
   <string name="weather_code_41">Kabut</string>
-  <string name="weather_code_42">Kabut asap</string>
-  <string name="weather_code_43">Berkabut</string>
+  <string name="weather_code_42">Berkabut</string>
+  <string name="weather_code_43">Kabut</string>
   <string name="weather_code_44">Pasir</string>
   <string name="weather_code_45">Debu</string>
-  <string name="weather_code_46">Abu vulkanik</string>
+  <string name="weather_code_46">Abu Vulkanik</string>
   <string name="weather_code_47">Badai debu</string>
   <string name="weather_code_48">Badai pasir</string>
   <string name="weather_code_49">Panas</string>
