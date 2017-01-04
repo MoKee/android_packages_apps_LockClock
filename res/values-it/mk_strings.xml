@@ -36,10 +36,10 @@
   <string name="weather_code_16">Uragano</string>
   <string name="weather_code_17">Tornado</string>
   <string name="weather_code_18">Tempesta tropicale</string>
-  <string name="weather_code_19">Aquazzone</string>
+  <string name="weather_code_19">Acquazzone</string>
   <string name="weather_code_20">Forte acquazzone</string>
   <string name="weather_code_21">Temporale</string>
-  <string name="weather_code_22">Forti temporali</string>
+  <string name="weather_code_22">Forte temporale</string>
   <string name="weather_code_23">Grandine</string>
   <string name="weather_code_24">Pioggia leggera</string>
   <string name="weather_code_25">Pioggia moderata</string>
@@ -50,9 +50,9 @@
   <string name="weather_code_30">Tempesta forte</string>
   <string name="weather_code_31">Tempesta violenta</string>
   <string name="weather_code_32">Pioggia gelata</string>
-  <string name="weather_code_33">Leggere nevicate</string>
-  <string name="weather_code_34">Nevicate moderate</string>
-  <string name="weather_code_35">Forti nevicate</string>
+  <string name="weather_code_33">Nevicata leggera</string>
+  <string name="weather_code_34">Nevicata moderata</string>
+  <string name="weather_code_35">Forte nevicata</string>
   <string name="weather_code_36">Bufera di neve</string>
   <string name="weather_code_37">Nevischio</string>
   <string name="weather_code_38">Pioggia con neve</string>
