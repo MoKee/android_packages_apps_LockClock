@@ -15,18 +15,18 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="weather_icons_mokee">Domyślnie</string>
+  <string name="weather_icons_mokee">Domyślne</string>
   <string name="weather_last_update_time">Ostatnia aktualizacja %s</string>
   <string name="weather_code_0">Słonecznie</string>
   <string name="weather_code_1">Pochmurnie</string>
-  <string name="weather_code_2">Kilka chmur</string>
+  <string name="weather_code_2">Lekkie zachmurzenie</string>
   <string name="weather_code_3">Częściowe zachmurzenie</string>
   <string name="weather_code_4">Pochmurno</string>
   <string name="weather_code_5">Wietrznie</string>
-  <string name="weather_code_6">Spokojna</string>
+  <string name="weather_code_6">Spokojnie</string>
   <string name="weather_code_7">Słaby wiatr</string>
   <string name="weather_code_8">Umiarkowany wiatr</string>
-  <string name="weather_code_9">Świeży powiew</string>
+  <string name="weather_code_9">Lekkie powiewy</string>
   <string name="weather_code_10">Silna bryza</string>
   <string name="weather_code_11">Silny wiatr</string>
   <string name="weather_code_12">Wichura</string>
@@ -44,7 +44,7 @@
   <string name="weather_code_24">Słaby deszcz</string>
   <string name="weather_code_25">Umiarkowany deszcz</string>
   <string name="weather_code_26">Intensywny deszcz</string>
-  <string name="weather_code_27">Ekstremalny deszcz</string>
+  <string name="weather_code_27">Ekstremalna ulewa</string>
   <string name="weather_code_28">Mżawka</string>
   <string name="weather_code_29">Burza</string>
   <string name="weather_code_30">Silna burza</string>
@@ -57,9 +57,9 @@
   <string name="weather_code_37">Śnieg z deszczem</string>
   <string name="weather_code_38">Deszcz ze śniegiem</string>
   <string name="weather_code_39">Opady śniegu</string>
-  <string name="weather_code_40">Pruszenie śniegu</string>
+  <string name="weather_code_40">Śnieżyca</string>
   <string name="weather_code_41">Lekka mgła</string>
-  <string name="weather_code_42">Mglisto</string>
+  <string name="weather_code_42">Mgliście</string>
   <string name="weather_code_43">Mgła</string>
   <string name="weather_code_44">Piasek</string>
   <string name="weather_code_45">Pył</string>
