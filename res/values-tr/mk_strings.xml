@@ -24,10 +24,10 @@
   <string name="weather_code_4">Kapalı</string>
   <string name="weather_code_5">Rüzgarlı</string>
   <string name="weather_code_6">Sakin</string>
-  <string name="weather_code_7">Hafif meltem</string>
-  <string name="weather_code_8">Orta esinti</string>
+  <string name="weather_code_7">Hafif Esinti</string>
+  <string name="weather_code_8">Orta Esinti</string>
   <string name="weather_code_9">Serin esinti</string>
-  <string name="weather_code_10">Güçlü esinti</string>
+  <string name="weather_code_10">Güçlü Esinti</string>
   <string name="weather_code_11">Yüksek Rüzgar</string>
   <string name="weather_code_12">Fırtına</string>
   <string name="weather_code_13">Güçlü fırtına</string>
