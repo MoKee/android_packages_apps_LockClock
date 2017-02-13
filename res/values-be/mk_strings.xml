@@ -20,7 +20,7 @@
   <string name="weather_code_0">Сонечна</string>
   <string name="weather_code_1">Воблачна</string>
   <string name="weather_code_2">Малавоблачна</string>
-  <string name="weather_code_3">Часткова воблачна</string>
+  <string name="weather_code_3">Невялікая воблачнасць</string>
   <string name="weather_code_4">Пахмурна</string>
   <string name="weather_code_5">Ветрана</string>
   <string name="weather_code_6">Штыль</string>
@@ -29,7 +29,7 @@
   <string name="weather_code_9">Легкі брыз</string>
   <string name="weather_code_10">Халодны вецер</string>
   <string name="weather_code_11">Моцны вецер</string>
-  <string name="weather_code_12">Штарміць</string>
+  <string name="weather_code_12">Шторм</string>
   <string name="weather_code_13">Шторм</string>
   <string name="weather_code_14">Навальніца</string>
   <string name="weather_code_15">Моцны шторм</string>
@@ -45,7 +45,7 @@
   <string name="weather_code_25">Умераны дождж</string>
   <string name="weather_code_26">Моцны дождж</string>
   <string name="weather_code_27">Экстрэмальны дождж</string>
-  <string name="weather_code_28">Дождж імжыць</string>
+  <string name="weather_code_28">Імжа</string>
   <string name="weather_code_29">Навальніца</string>
   <string name="weather_code_30">Моцны шторм</string>
   <string name="weather_code_31">Моцная бура</string>
