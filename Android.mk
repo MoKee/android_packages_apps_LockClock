@@ -25,9 +25,7 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 LOCAL_AAPT_FLAGS := --auto-add-overlay
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
+    org.mokee.platform.internal \
     org.mokee.platform.sdk
-
-LOCAL_JAVA_LIBRARIES += \
-    org.mokee.platform.internal
 
 include $(BUILD_PACKAGE)
