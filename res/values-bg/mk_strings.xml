@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="weather_icons_mokee">Основен</string>
+  <string name="weather_icons_mokee">По подразбиране</string>
   <string name="weather_last_update_time">Последна актуализация: %s</string>
   <string name="weather_code_0">Слънчево</string>
   <string name="weather_code_1">Облачно</string>
@@ -41,7 +41,7 @@
   <string name="weather_code_21">Преваляване с гръмотевици</string>
   <string name="weather_code_22">Силна гръмотевична буря</string>
   <string name="weather_code_23">Градушка</string>
-  <string name="weather_code_24">Лек дъжд</string>
+  <string name="weather_code_24">Слаб дъжд</string>
   <string name="weather_code_25">Умерен дъжд</string>
   <string name="weather_code_26">Силен дъжд</string>
   <string name="weather_code_27">Пороен дъжд</string>
@@ -66,6 +66,6 @@
   <string name="weather_code_46">Вулканична пепел</string>
   <string name="weather_code_47">Прашна буря</string>
   <string name="weather_code_48">Пясъчна буря</string>
-  <string name="weather_code_49">Горещ</string>
-  <string name="weather_code_50">Студен</string>
+  <string name="weather_code_49">Горещо</string>
+  <string name="weather_code_50">Студено</string>
 </resources>
