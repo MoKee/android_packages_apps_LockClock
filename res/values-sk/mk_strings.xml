@@ -44,7 +44,7 @@
   <string name="weather_code_24">Slabý dážď</string>
   <string name="weather_code_25">Mierny dážď</string>
   <string name="weather_code_26">Výdatný dážď</string>
-  <string name="weather_code_27">Extrémne dážď</string>
+  <string name="weather_code_27">Extrémny dážď</string>
   <string name="weather_code_28">Mrholenie</string>
   <string name="weather_code_29">Búrka</string>
   <string name="weather_code_30">Ťažká búrka</string>
@@ -54,12 +54,12 @@
   <string name="weather_code_34">Stredné sneženie</string>
   <string name="weather_code_35">Husté sneženie</string>
   <string name="weather_code_36">Snehová búrka</string>
-  <string name="weather_code_37">Dážď so snehom</string>
+  <string name="weather_code_37">Čľapkanica</string>
   <string name="weather_code_38">Dážď so snehom</string>
   <string name="weather_code_39">Snehová prehánka</string>
   <string name="weather_code_40">Snehové prívaly</string>
   <string name="weather_code_41">Hmla</string>
-  <string name="weather_code_42">Hmlhavo</string>
+  <string name="weather_code_42">Mlhavo</string>
   <string name="weather_code_43">Opar</string>
   <string name="weather_code_44">Piesok</string>
   <string name="weather_code_45">Prach</string>
