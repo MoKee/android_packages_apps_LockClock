@@ -16,8 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="weather_icons_mokee">預設</string>
-  <string name="weather_last_update_time">最後更新於 %s</string>
-  <string name="weather_code_0">晴天</string>
+  <string name="weather_last_update_time">上次更新於 %s</string>
+  <string name="weather_code_0">晴</string>
   <string name="weather_code_1">多雲</string>
   <string name="weather_code_2">少雲</string>
   <string name="weather_code_3">局部有雲</string>
