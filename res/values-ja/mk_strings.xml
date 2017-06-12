@@ -21,6 +21,7 @@
   <string name="weather_code_1">曇り</string>
   <string name="weather_code_2">やや曇り</string>
   <string name="weather_code_3">少し曇り</string>
+  <string name="weather_code_4">曇天</string>
   <string name="weather_code_5">強風</string>
   <string name="weather_code_6">凪</string>
   <string name="weather_code_7">そよ風</string>
@@ -36,5 +37,9 @@
   <string name="weather_code_17">竜巻</string>
   <string name="weather_code_18">熱帯暴風雨</string>
   <string name="weather_code_19">にわか雨</string>
+  <string name="weather_code_20">強いにわか雨</string>
+  <string name="weather_code_21">雷雨</string>
+  <string name="weather_code_22">非常に激しい雷雨</string>
+  <string name="weather_code_23">雹</string>
   <string name="weather_code_29">荒らし</string>
 </resources>
