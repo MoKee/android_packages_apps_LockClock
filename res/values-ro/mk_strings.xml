@@ -66,4 +66,6 @@
   <string name="weather_code_46">Cenușă vulcanică</string>
   <string name="weather_code_47">Furtună de praf</string>
   <string name="weather_code_48">Furtună de nisip</string>
+  <string name="weather_code_49">Cald</string>
+  <string name="weather_code_50">Rece</string>
 </resources>
