@@ -41,5 +41,19 @@
   <string name="weather_code_21">雷雨</string>
   <string name="weather_code_22">非常に激しい雷雨</string>
   <string name="weather_code_23">雹</string>
+  <string name="weather_code_24">小雨</string>
+  <string name="weather_code_25">中雨</string>
+  <string name="weather_code_26">大雨</string>
+  <string name="weather_code_27">エクストリームレイン</string>
+  <string name="weather_code_28">霧雨</string>
   <string name="weather_code_29">荒らし</string>
+  <string name="weather_code_30">重い嵐</string>
+  <string name="weather_code_31">深刻な嵐</string>
+  <string name="weather_code_32">凍雨</string>
+  <string name="weather_code_33">小雪</string>
+  <string name="weather_code_34">中程度の雪</string>
+  <string name="weather_code_35">大雪</string>
+  <string name="weather_code_36">吹雪</string>
+  <string name="weather_code_37">おやすみ</string>
+  <string name="weather_code_38">雪と雨</string>
 </resources>
