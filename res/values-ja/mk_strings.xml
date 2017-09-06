@@ -56,4 +56,16 @@
   <string name="weather_code_36">吹雪</string>
   <string name="weather_code_37">おやすみ</string>
   <string name="weather_code_38">雪と雨</string>
+  <string name="weather_code_39">シャワーの雪</string>
+  <string name="weather_code_40">雪のシャワー</string>
+  <string name="weather_code_41">ミスト</string>
+  <string name="weather_code_42">霧</string>
+  <string name="weather_code_43">ヘイズ</string>
+  <string name="weather_code_44">砂</string>
+  <string name="weather_code_45">粉塵</string>
+  <string name="weather_code_46">火山灰</string>
+  <string name="weather_code_47">砂塵嵐</string>
+  <string name="weather_code_48">砂嵐</string>
+  <string name="weather_code_49">ホット</string>
+  <string name="weather_code_50">コールド</string>
 </resources>

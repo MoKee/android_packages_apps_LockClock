@@ -44,7 +44,7 @@
   <string name="weather_code_24">小雨</string>
   <string name="weather_code_25">中雨</string>
   <string name="weather_code_26">大雨</string>
-  <string name="weather_code_27">極端雨</string>
+  <string name="weather_code_27">極端降雨</string>
   <string name="weather_code_28">毛毛雨</string>
   <string name="weather_code_29">風暴</string>
   <string name="weather_code_30">暴風雨</string>
@@ -57,7 +57,7 @@
   <string name="weather_code_37">霰</string>
   <string name="weather_code_38">雨雪</string>
   <string name="weather_code_39">陣雨雪</string>
-  <string name="weather_code_40">雲系</string>
+  <string name="weather_code_40">陣雪</string>
   <string name="weather_code_41">迷霧</string>
   <string name="weather_code_42">霧</string>
   <string name="weather_code_43">陰霾</string>
