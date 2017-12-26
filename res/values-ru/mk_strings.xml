@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="weather_icons_mokee">По умолчанию</string>
-  <string name="weather_last_update_time">Последнее обновление %s</string>
+  <string name="weather_last_update_time">Последнее обновление: %s</string>
   <string name="weather_code_0">Солнечно</string>
   <string name="weather_code_1">Облачно</string>
   <string name="weather_code_2">Малооблачно</string>
