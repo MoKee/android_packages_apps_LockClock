@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2013 David van Tonder
+ * Copyright (C) 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,4 +101,10 @@ public class ForecastActivity extends Activity {
         startService(i);
     }
 
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(0, 0);
+    }
 }
