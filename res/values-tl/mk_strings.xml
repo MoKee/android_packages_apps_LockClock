@@ -64,4 +64,6 @@
   <string name="weather_code_45">Alikabok</string>
   <string name="weather_code_46">Abo ng bulkan</string>
   <string name="weather_code_47">Duststorm</string>
+  <string name="weather_code_49">Mainit</string>
+  <string name="weather_code_50">Malamig</string>
 </resources>
