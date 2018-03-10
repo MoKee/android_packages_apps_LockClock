@@ -63,6 +63,9 @@
   <string name="weather_code_43">غائم</string>
   <string name="weather_code_44">رمال</string>
   <string name="weather_code_45">غبار</string>
+  <string name="weather_code_46">الرماد البركاني</string>
   <string name="weather_code_47">زوبعة غبار</string>
   <string name="weather_code_48">زوبعة رملية</string>
+  <string name="weather_code_49">حار</string>
+  <string name="weather_code_50">بارد</string>
 </resources>
