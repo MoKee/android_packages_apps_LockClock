@@ -66,6 +66,6 @@
   <string name="weather_code_46">Abu vulkanik</string>
   <string name="weather_code_47">Badai debu</string>
   <string name="weather_code_48">Badai pasir</string>
-  <string name="weather_code_49">Panas</string>
-  <string name="weather_code_50">Dingin</string>
+  <string name="weather_code_49">Hangat</string>
+  <string name="weather_code_50">Sejuk</string>
 </resources>
