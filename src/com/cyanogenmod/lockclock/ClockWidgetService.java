@@ -41,7 +41,8 @@ import com.cyanogenmod.lockclock.misc.Preferences;
 import com.cyanogenmod.lockclock.misc.WidgetUtils;
 import com.cyanogenmod.lockclock.weather.Utils;
 import com.cyanogenmod.lockclock.weather.WeatherUpdateService;
-import com.mokee.cloud.calendar.Lunar;
+import com.mokee.cloud.calendar.ChineseCalendar;
+import com.mokee.cloud.calendar.ChineseCalendarInfo;
 
 import static mokee.providers.WeatherContract.WeatherColumns.TempUnit.FAHRENHEIT;
 import static mokee.providers.WeatherContract.WeatherColumns.TempUnit.CELSIUS;
@@ -303,8 +304,8 @@ public class ClockWidgetService extends IntentService {
 
             if (MoKeeUtils.isSupportLanguage(false)) {
                 Calendar calendar = Calendar.getInstance();
-                Lunar lunar = new Lunar(calendar);
-                String lunarDate = lunar.getLunarMonthString() + lunar.getLunarDayString();
+                ChineseCalendarInfo chineseCalendarInfo = new ChineseCalendar(calendar).getChineseCalendarInfo();
+                String lunarDate = chineseCalendarInfo.getLunarMonthDay();
                 if (Preferences.useBoldFontForDateAndAlarms(this)) {
                     clockViews.setTextViewText(R.id.date_lunar_bold, " | " + lunarDate);
                     clockViews.setTextColor(R.id.date_lunar_bold, color);
