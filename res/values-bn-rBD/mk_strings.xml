@@ -15,14 +15,14 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="weather_icons_mokee">Default</string>
-  <string name="weather_last_update_time">Last update %s</string>
-  <string name="weather_code_0">Sunny</string>
-  <string name="weather_code_1">Cloudy</string>
-  <string name="weather_code_2">Few Clouds</string>
-  <string name="weather_code_3">Partly Cloudy</string>
-  <string name="weather_code_8">Moderate Breeze</string>
-  <string name="weather_code_9">Fresh Breeze</string>
-  <string name="weather_code_10">Strong Breeze</string>
-  <string name="weather_code_27">Extreme Rain</string>
+    <string name="weather_icons_mokee">Default</string>
+    <string name="weather_last_update_time">Last update %s</string>
+    <string name="weather_code_0">Sunny</string>
+    <string name="weather_code_1">Cloudy</string>
+    <string name="weather_code_2">Few Clouds</string>
+    <string name="weather_code_3">Partly Cloudy</string>
+    <string name="weather_code_8">Moderate Breeze</string>
+    <string name="weather_code_9">Fresh Breeze</string>
+    <string name="weather_code_10">Strong Breeze</string>
+    <string name="weather_code_27">Extreme Rain</string>
 </resources>

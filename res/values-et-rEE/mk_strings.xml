@@ -15,18 +15,18 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="weather_icons_mokee">Vaikimisi</string>
-  <string name="weather_code_0">Päikeseline</string>
-  <string name="weather_code_1">Pilves</string>
-  <string name="weather_code_2">Mõned pilved</string>
-  <string name="weather_code_3">Osaliselt pilves</string>
-  <string name="weather_code_4">Lauspilves</string>
-  <string name="weather_code_5">Tuuline</string>
-  <string name="weather_code_6">Rahulik</string>
-  <string name="weather_code_7">Kerge tuul</string>
-  <string name="weather_code_8">Mõõdukas tuul</string>
-  <string name="weather_code_9">Värske tuuleiil</string>
-  <string name="weather_code_10">Tugev tuul</string>
-  <string name="weather_code_14">Torm</string>
-  <string name="weather_code_29">Torm</string>
+    <string name="weather_icons_mokee">Vaikimisi</string>
+    <string name="weather_code_0">Päikeseline</string>
+    <string name="weather_code_1">Pilves</string>
+    <string name="weather_code_2">Mõned pilved</string>
+    <string name="weather_code_3">Osaliselt pilves</string>
+    <string name="weather_code_4">Lauspilves</string>
+    <string name="weather_code_5">Tuuline</string>
+    <string name="weather_code_6">Rahulik</string>
+    <string name="weather_code_7">Kerge tuul</string>
+    <string name="weather_code_8">Mõõdukas tuul</string>
+    <string name="weather_code_9">Värske tuuleiil</string>
+    <string name="weather_code_10">Tugev tuul</string>
+    <string name="weather_code_14">Torm</string>
+    <string name="weather_code_29">Torm</string>
 </resources>

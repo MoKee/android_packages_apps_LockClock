@@ -15,6 +15,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="weather_icons_mokee">ברירת מחדל</string>
-  <string name="weather_last_update_time">עדכון אחרון: %s</string>
+    <string name="weather_icons_mokee">ברירת מחדל</string>
+    <string name="weather_last_update_time">עדכון אחרון: %s</string>
 </resources>
